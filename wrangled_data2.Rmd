@@ -2,16 +2,20 @@
 ```{r}
 # data wrangling : first dataset
 library(tidyverse)
+library(readr)
 
 # import first data set
-soccer_data1 <- read.csv("data/toWrangle.csv")
-view(soccer_data1)
+soccer_data1 <- read_delim("~/school/fall 2023/data-science/blog-yay-soccer/data/transfermarkt_fbref_201718.csv", 
+  delim = ";", escape_double = FALSE, trim_ws = TRUE)
 
 # wrangle data
-soccer_data2 <- soccer_data1 
-# |>
-#   select()
+soccer_data2 <- soccer_data1 |>
+   select(player, nationality, position, squad, age, league, goals, Season)
+# change selected ^
 
-# save new data file
-write.csv(soccer_data2, "blog-yay-soccer/wrangled_dataset2.csv", row.names = FALSE)
+view(soccer_data2)
+
+# save new data file - error due to too many rows/cols
+write.csv(soccer_data2, "wrangled_dataset2.csv")
+#, row.names = FALSE
 ```
