@@ -1,0 +1,17 @@
+
+```{r}
+# data wrangling : first dataset
+library(tidyverse)
+
+# import first data set
+soccer_data1 <- read.csv("data/toWrangle.csv")
+view(soccer_data1)
+
+# wrangle data
+soccer_data2 <- soccer_data1 
+# |>
+#   select()
+
+# save new data file
+write.csv(soccer_data2, "blog-yay-soccer/wrangled_dataset2.csv", row.names = FALSE)
+```
