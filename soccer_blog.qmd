@@ -1,0 +1,374 @@
+---
+title: "soccer_blog"
+format: html
+editor: visual
+---
+
+## Quarto
+
+Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
+
+## Running Code
+
+When you click the **Render** button a document will be generated that includes both content and the output of embedded code. You can embed code like this:
+
+```{r}
+library(tidyverse)
+library(ggrepel)
+library(broom)
+library(GGally)
+library(purrr)
+library(dplyr)
+library(scales)
+library(ggnetwork)
+library(igraph)
+library(tidyr)
+library(igraph)
+```
+
+You can add options to executable code like this
+
+```{r}
+#| echo: false
+#| #read in data
+```
+
+The `echo: false` option disables the printing of code (only output is displayed).
+
+WRANGLE DATA
+
+```{r}
+#BUNDESLIGA
+bundesliga <- read_csv("archive/bundesliga-match-scores.csv") 
+
+bundesliga <- bundesliga |>
+  filter(round == "Regular Season") |>
+  select(round, date, home, score, away)
+
+bundesliga <- bundesliga |>
+  separate(score, c('HG0', 'AG0'), convert = TRUE)
+
+bundesliga_2021_22 <- bundesliga |>
+  filter(year(date) %in% c(2021, 2022))
+
+bunds_data <- bundesliga_2021_22 |>
+  select(home, HG0, AG0, away)|>
+  group_by(home, away) |>
+  summarise(HG = sum(HG0), AG = sum(AG0))
+
+bayern_data <- bunds_data |>
+  filter(home == "Bayern Munich" | away == "Bayern Munich")
+
+```
+
+```{r}
+#PREMIER LEAGUE
+prem_lg <- read_csv("archive/premierleague-match-scores.csv") 
+soccer <- readRDS("archive/soccer.Rds")
+
+#wrangle prem league
+prem_lg <- prem_lg |>
+  select(date, home, score, away)
+
+prem_lg <- prem_lg |>
+  separate(score, c('HG0', 'AG0'), convert = TRUE)
+
+prem_2021_22 <- prem_lg |>
+  filter(year(date) %in% c(2021, 2022))
+
+prem_data <- prem_2021_22 |>
+  select(home, HG0, AG0, away)|>
+  group_by(home, away) |>
+  summarise(HG = sum(HG0), AG = sum(AG0))
+
+man_city_data <- prem_data |>
+  filter(home == "Manchester City" | away == "Manchester City")
+
+
+#select things from soccer dataset
+soccer <- soccer |>
+  select(HomeTeam, AwayTeam, FTHG, FTAG)
+
+```
+
+```{r}
+#LA LIGA
+la_liga <- read_csv("archive/laliga-match-scores.csv") 
+
+#wrangle la liga
+la_liga <- la_liga |>
+  select(date, home, score, away)
+
+la_liga <- la_liga |>
+  separate(score, c('HG0', 'AG0'), convert = TRUE)
+
+la_liga_2021_22 <- la_liga |>
+  filter(year(date) %in% c(2021, 2022))
+
+la_liga_data <- la_liga_2021_22 |>
+  select(home, HG0, AG0, away)|>
+  group_by(home, away) |>
+  summarise(HG = sum(HG0), AG = sum(AG0))
+
+rm_data <- la_liga_data |>
+  filter(home == "Real Madrid" | away == "Real Madrid")
+
+```
+
+PREMIER LEAGUE WITH SOCCER DATASET
+
+```{r}
+#network connection code for Premier League
+
+soccer_igraph_full <- soccer |>
+  select(HomeTeam, AwayTeam, everything()) |>
+  # create igraph object
+  graph_from_data_frame(directed=TRUE)
+class(soccer_igraph_full)
+gorder(soccer_igraph_full)
+gsize(soccer_igraph_full)
+```
+
+```{r}
+#prem
+plot(soccer_igraph_full)
+```
+
+```{r}
+#prem
+soccer_network_full <- ggnetwork(soccer_igraph_full)
+```
+
+```{r}
+# Plot network for prem
+ggplot(data=soccer_network_full
+       , aes(x = x, y = y, xend = xend, yend = yend)) +
+  geom_edges(arrow = arrow(type = "closed", length = unit(8, "pt")),
+             color = "lightgray") +
+  geom_nodes() +
+  geom_nodelabel(aes(label = name)) +
+  theme_blank()
+```
+
+```{r}
+#| fig.width: 10
+#| fig.height: 15
+#network connection where arrows are colored by goals the home team scored (prem)
+
+ggplot(data=soccer_network_full
+         , aes(x = x, y = y, xend = xend, yend = yend)) +
+  geom_edges(arrow = arrow(type = "closed", angle = 50, length = unit(15, "pt")),
+             aes(color = FTHG)) +
+  geom_nodelabel(aes(label = name)) +
+  scale_color_continuous(type = "viridis",
+                         labels = label_number()
+                         , guide = guide_colorbar(title.position="top"
+                                                  , title.hjust = 0.5)) +
+  labs(title = "Goals scored in Prem",
+       color = "Number goals scored") +
+  theme_blank() +
+  theme(legend.position = "bottom", legend.key.width=unit(2,"cm")) 
+```
+
+LA LIGA WITH GOOD DATASET
+
+```{r}
+la_liga_igraph_full <- la_liga_data |>
+  select(home, away, everything()) |>
+  # create igraph object
+  graph_from_data_frame(directed=TRUE)
+class(la_liga_igraph_full)
+gorder(la_liga_igraph_full)
+gsize(la_liga_igraph_full)
+plot(la_liga_igraph_full)
+```
+
+```{r}
+# Now, create the network plot using ggnetwork
+la_liga_network_full <- ggnetwork(la_liga_igraph_full)
+```
+
+```{r}
+#| fig.width: 10
+#| fig.height: 15
+
+ggplot(data=la_liga_network_full
+         , aes(x = x, y = y, xend = xend, yend = yend)) +
+  geom_edges(arrow = arrow(type = "closed", angle = 50, length = unit(15, "pt")),
+             aes(color = HG)) +
+  geom_nodelabel(aes(label = name)) +
+  scale_color_continuous(type = "viridis",
+                         labels = label_number()
+                         , guide = guide_colorbar(title.position="top"
+                                                  , title.hjust = 0.5)) +
+  labs(title = "Goals scored in La Liga",
+       color = "Number goals scored") +
+  theme_blank() +
+  theme(legend.position = "bottom", legend.key.width=unit(2,"cm"))
+```
+
+BUNDESLIGA WITH GOOD DATASET
+
+```{r}
+bundesliga_igraph_full <- bunds_data |>
+  select(home, away, everything()) |>
+  # create igraph object
+  graph_from_data_frame(directed=TRUE)
+class(bundesliga_igraph_full)
+gorder(bundesliga_igraph_full)
+gsize(bundesliga_igraph_full)
+plot(bundesliga_igraph_full)
+```
+
+```{r}
+# Now, create the network plot using ggnetwork
+bundesliga_network_full <- ggnetwork(bundesliga_igraph_full)
+```
+
+```{r}
+#| fig.width: 15
+#| fig.height: 10
+
+ggplot(data=bundesliga_network_full
+         , aes(x = x, y = y, xend = xend, yend = yend)) +
+  geom_edges(arrow = arrow(type = "closed", angle = 50, length = unit(15, "pt")),
+             aes(color = HG)) +
+  geom_nodelabel(aes(label = name)) +
+  scale_color_continuous(type = "viridis",
+                         labels = label_number()
+                         , guide = guide_colorbar(title.position="top"
+                                                  , title.hjust = 0.5)) +
+  labs(title = "Goals scored in Bundesliga",
+       color = "Number goals scored") +
+  theme_blank() +
+  theme(legend.position = "bottom", legend.key.width=unit(2,"cm"))
+```
+
+PREMIER LEAGUE WITH GOOD DATASET
+
+```{r}
+prem_igraph_full <- prem_data |>
+  select(home, away, everything()) |>
+  # create igraph object
+  graph_from_data_frame(directed=TRUE)
+class(prem_igraph_full)
+gorder(prem_igraph_full)
+gsize(prem_igraph_full)
+plot(prem_igraph_full)
+```
+
+```{r}
+# Now, create the network plot using ggnetwork
+prem_network_full <- ggnetwork(prem_igraph_full)
+```
+
+```{r}
+#| fig.width: 15
+#| fig.height: 10
+ggplot(data=prem_network_full
+         , aes(x = x, y = y, xend = xend, yend = yend)) +
+  geom_edges(arrow = arrow(type = "closed", angle = 50, length = unit(15, "pt")),
+             aes(color = HG)) +
+  geom_nodelabel(aes(label = name)) +
+  scale_color_continuous(type = "viridis",
+                         labels = label_number()
+                         , guide = guide_colorbar(title.position="top"
+                                                  , title.hjust = 0.5)) +
+  labs(title = "Goals scored in Premier League",
+       color = "Number goals scored") +
+  theme_blank() +
+  theme(legend.position = "bottom", legend.key.width=unit(2,"cm"))
+```
+
+NOW FOR ONE TEAM
+
+BUNDESLIGA
+
+```{r}
+bayern_igraph_full <- bayern_data |>
+  select(home, away, everything()) |>
+  # create igraph object
+  graph_from_data_frame(directed=TRUE)
+class(bayern_igraph_full)
+gorder(bayern_igraph_full)
+gsize(bayern_igraph_full)
+plot(bayern_igraph_full)
+bayern_network_full <- ggnetwork(bayern_igraph_full)
+```
+
+```{r}
+
+ggplot(data=bayern_network_full
+         , aes(x = x, y = y, xend = xend, yend = yend)) +
+  geom_edges(arrow = arrow(type = "closed", angle = 50, length = unit(15, "pt")),
+             aes(color = HG)) +
+  geom_nodelabel(aes(label = name)) +
+  scale_color_continuous(type = "viridis",
+                         labels = label_number()
+                         , guide = guide_colorbar(title.position="top"
+                                                  , title.hjust = 0.5)) +
+  labs(title = "Goals scored by Bayern",
+       color = "Number goals scored") +
+  theme_blank() +
+  theme(legend.position = "bottom", legend.key.width=unit(2,"cm"))
+```
+
+PREMIER LEAGUE
+
+```{r}
+mc_igraph_full <- man_city_data |>
+  select(home, away, everything()) |>
+  # create igraph object
+  graph_from_data_frame(directed=TRUE)
+class(mc_igraph_full)
+gorder(mc_igraph_full)
+gsize(mc_igraph_full)
+plot(mc_igraph_full)
+mc_network_full <- ggnetwork(mc_igraph_full)
+```
+
+```{r}
+ggplot(data=mc_network_full
+         , aes(x = x, y = y, xend = xend, yend = yend)) +
+  geom_edges(arrow = arrow(type = "closed", angle = 50, length = unit(15, "pt")),
+             aes(color = HG)) +
+  geom_nodelabel(aes(label = name)) +
+  scale_color_continuous(type = "viridis",
+                         labels = label_number()
+                         , guide = guide_colorbar(title.position="top"
+                                                  , title.hjust = 0.5)) +
+  labs(title = "Goals scored by Bayern",
+       color = "Number goals scored") +
+  theme_blank() +
+  theme(legend.position = "bottom", legend.key.width=unit(2,"cm"))
+```
+
+LA LIGA
+
+```{r}
+rm_igraph_full <- rm_data |>
+  select(home, away, everything()) |>
+  # create igraph object
+  graph_from_data_frame(directed=TRUE)
+class(rm_igraph_full)
+gorder(rm_igraph_full)
+gsize(rm_igraph_full)
+plot(rm_igraph_full)
+rm_network_full <- ggnetwork(rm_igraph_full)
+```
+
+```{r}
+ggplot(data=rm_network_full
+         , aes(x = x, y = y, xend = xend, yend = yend)) +
+  geom_edges(arrow = arrow(type = "closed", angle = 50, length = unit(15, "pt")),
+             aes(color = HG)) +
+  geom_nodelabel(aes(label = name)) +
+  scale_color_continuous(type = "viridis",
+                         labels = label_number()
+                         , guide = guide_colorbar(title.position="top"
+                                                  , title.hjust = 0.5)) +
+  labs(title = "Goals scored by Bayern",
+       color = "Number goals scored") +
+  theme_blank() +
+  theme(legend.position = "bottom", legend.key.width=unit(2,"cm"))
+```
