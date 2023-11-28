@@ -1,29 +1,136 @@
----
-title: "wrangled_data"
-output: html_document
-date: "2023-11-26"
----
+```{r}
+# data wrangling : first dataset
+library(tidyverse)
+library(readr)
+library(leaflet)
+library(viridis)
+library(sf)
+library(countrycode)
+library(stringr)
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+# import first data set
+soccer_data1 <- read_delim("data/transfermarkt_fbref_201718.csv", delim = ";", 
+                           escape_double = FALSE, trim_ws = TRUE, show_col_types = FALSE)
+
+# wrangle data
+soccer_data2 <- soccer_data1 |>
+  select(player, nationality, league) |>
+    mutate(
+    nationality = str_extract(nationality, "[a-z]{2}"),
+    full_country_name = countrycode(nationality, "iso2c", "country.name", warn = TRUE))
+
+# Create a mapping of unmatched values to placeholders
+placeholder_mapping <- c(
+  "en" = "England",
+  "wa" = "Wales",
+  "xk" = "Kosovo"
+)
+
+# Replace unmatched values based on the mapping
+soccer_data2$full_country_name <- ifelse(
+  is.na(soccer_data2$full_country_name),
+  placeholder_mapping[soccer_data2$nationality],
+  soccer_data2$full_country_name
+)
+
+#Filter the leagues
+Premier_League <- soccer_data2 |>
+  filter(league == "Premier League")
+
+La_liga <- soccer_data2 |>
+  filter(league == "La Liga")
+
+Bundesliga <- soccer_data2 |>
+  filter(league == "Bundesliga")
+
+#Number of players from each country for every league
+ Num_players_PremierLeague <- Premier_League |>
+  group_by(full_country_name) |>
+  summarise(num_players = n())
+ 
+ Num_players_Laliga <- La_liga |>
+  group_by(full_country_name) |>
+  summarise(num_players = n())
+ 
+ Num_players_Bundesliga <- Bundesliga |>
+  group_by(full_country_name) |>
+  summarise(num_players = n())
+  
+
+# save new data file
+write.csv(soccer_data2, "wrangled_dataset.csv", row.names = FALSE)
 ```
 
-## R Markdown
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+```{r}
+#PREMIER LEAGUE
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+#Create map object
+ world_map1 <-  maps::map("world", plot = FALSE, fill = TRUE) |>
+    st_as_sf()
 
-```{r cars}
-summary(cars)
+# Draw map
+ PremierLeague_map <- Num_players_PremierLeague |>
+   left_join(world_map1, by = c("full_country_name"="ID"))
+ 
+head(PremierLeague_map)
+
+#Create a visualization
+
+ggplot(PremierLeague_map, aes(geometry=geom, fill = num_players)) +
+   geom_sf() +
+   theme_void() +
+   labs(fill = "Number of players"
+       , title = "Premier League Map") +
+   scale_fill_viridis(option = "magma", direction = -1) +
+    coord_sf(lims_method = "geometry_bbox", default_crs = NULL)
+
 ```
 
-## Including Plots
+```{r}
+#LA LIGA
 
-You can also embed plots, for example:
+#Create map object
+ world_map2 <-  maps::map("world", plot = FALSE, fill = TRUE) |>
+    st_as_sf()
 
-```{r pressure, echo=FALSE}
-plot(pressure)
+# Draw map
+ La_liga_map <- Num_players_Laliga |>
+   left_join(world_map2, by = c("full_country_name"="ID"))
+ 
+head(La_liga_map)
+
+#Create a visualization
+
+ggplot(La_liga_map, aes(geometry=geom, fill = num_players)) +
+   geom_sf() +
+   theme_void() +
+   labs(fill = "Number of players"
+       , title = "La liga Map") +
+   scale_fill_viridis(option = "magma", direction = -1) +
+    coord_sf(lims_method = "geometry_bbox", default_crs = NULL)
 ```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+```{r}
+#BUNDESLIGA
+
+#Create map object
+ world_map3 <-  maps::map("world", plot = FALSE, fill = TRUE) |>
+    st_as_sf()
+
+# Draw map
+ Bundesliga_map <- Num_players_Bundesliga |>
+   left_join(world_map3, by = c("full_country_name"="ID"))
+ 
+head(Bundesliga_map)
+
+#Create a visualization
+
+ggplot(Bundesliga_map, aes(geometry=geom, fill = num_players)) +
+   geom_sf() +
+   theme_void() +
+   labs(fill = "Number of players"
+       , title = "Bundesliga Map") +
+   scale_fill_viridis(option = "magma", direction = -1) +
+    coord_sf(lims_method = "geometry_bbox", default_crs = NULL)
+```
