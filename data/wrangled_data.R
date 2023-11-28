@@ -1,10 +1,11 @@
+
 # TEST - use wrangled_dataset2
 
 # data wrangling : first dataset
 library(tidyverse)
 
 # import first data set
-soccer_data1 <- read.csv("data/transfermarkt_fbref_201718")
+soccer_data1 <- read.csv("data/transfermarkt_fbref_201718.csv")
 view(soccer_data1)
 
 # wrangle data
