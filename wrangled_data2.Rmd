@@ -4,6 +4,7 @@
 library(tidyverse)
 library(readr)
 
+
 # import first data set
 soccer_data1 <- read_delim("~/school/fall 2023/data-science/blog-yay-soccer/data/transfermarkt_fbref_201718.csv", 
   delim = ";", escape_double = FALSE, trim_ws = TRUE, show_col_types = FALSE)
@@ -12,6 +13,22 @@ soccer_data1 <- read_delim("~/school/fall 2023/data-science/blog-yay-soccer/data
 soccer_data2 <- soccer_data1 |>
    select(player, nationality, position, squad, age, league, goals, Season)
 # change selected ^
+
+# group by league
+la_liga <- soccer_data2 |>
+  group_by(league) |>
+  filter(league == "La Liga")  
+
+# la_liga <- soccer_data2 |>
+#   group_by(league) |>
+#   filter(league == "La Liga")
+# 
+# la_liga <- soccer_data2 |>
+#   group_by(league) |>
+#   filter(league == "La Liga")
+
+# map country names -> dataset country names
+
 
 view(soccer_data2)
 
