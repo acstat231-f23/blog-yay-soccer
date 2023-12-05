@@ -34,7 +34,7 @@ Insert Background here.
 #### Number of players by country for three leagues -- La Liga, Premier, and Bundesliga.
 ### La Liga
 ```{r}
-#| fig.cap: 'La Liga players in each country'
+#| fig.cap: 'La Liga league players by country'
 #| out.width: 80%
 #| fig.align: center
 
@@ -43,7 +43,7 @@ knitr::include_graphics("img/la_liga_map.png")
 
 ### Premier
 ```{r}
-#| fig.cap: 'Premier players in each country'
+#| fig.cap: 'Premier league players by country'
 #| out.width: 80%
 #| fig.align: center
 
@@ -51,7 +51,7 @@ knitr::include_graphics("img/premier_map.png")
 ```
 ### Bundesliga
 ```{r}
-#| fig.cap: 'Bundesliga players in each country'
+#| fig.cap: 'Bundesliga league players by country'
 #| out.width: 80%
 #| fig.align: center
 
@@ -60,46 +60,46 @@ knitr::include_graphics("img/bundesliga_map.png")
 
 # Team Scores
 Here are networks displaying the goals scored. The arrows point to the away team.
+## La Liga 
 ```{r}
-#| fig.cap: 'La Liga Scores'
+#| fig.cap: 'Goals scored between teams in La Liga at home games. Each arrow represents the amount of goals a home team has scored on the away team.'
 #| out.width: 80%
 #| fig.align: center
 knitr::include_graphics("soccer_blog_files/figure-html/unnamed-chunk-13-1.png")
 ```
-
+## Premier
 ```{r}
-#| fig.cap: 'Premier Scores'
+#| fig.cap: 'Goals scored between teams in the Premier League at home games. Each arrow represents the amount of goals a home team has scored on the away team.'
 #| out.width: 80%
 #| fig.align: center
 knitr::include_graphics("soccer_blog_files/figure-html/unnamed-chunk-19-1.png")
 ```
-
+## Bundesliga 
 ```{r}
-#| fig.cap: 'Bundesliga Scores'
+#| fig.cap: 'Goals scored between teams in the Bundesliga at home games. Each arrow represents the amount of goals a home team has scored on the away team.'
 #| out.width: 80%
 #| fig.align: center
 knitr::include_graphics("soccer_blog_files/figure-html/unnamed-chunk-16-1.png")
 ```
-## Now for one team:
+# One team:
+## Bundesliga - Bayern Munich
 ```{r}
-#| fig.cap: 'Scores by Team, La Liga'
+#| fig.cap: 'Goals scored between Bayern Munich and other teams in the Bundesliga. The arrows from Bayern Munich to other teams represent the goals Bayern Munich scored on that team when Bayern Munich was the home team. The arrows from the other teams to Bayern Munich are the goals Bayern Munich conceded when playing away.'
 #| out.width: 80%
 #| fig.align: center
 knitr::include_graphics("soccer_blog_files/figure-html/unnamed-chunk-21-1.png")
 
-
-#""
 ```
-
+## Premier - Manchester
 ```{r}
-#| fig.cap: 'Premier Scores'
+#| fig.cap: 'Goals scored between Manchester City and other teams in the Premier League. The arrows from Manchester City to other teams represent the goals Manchester City scored on that team when Manchester City was the home team. The arrows from the other teams to Manchester City are the goals Manchester City conceded when playing away.'
 #| out.width: 80%
 #| fig.align: center
 knitr::include_graphics("soccer_blog_files/figure-html/unnamed-chunk-23-1.png")
 ```
-
+## La Liga - Real Madrid
 ```{r}
-#| fig.cap: 'La Liga Scores'
+#| fig.cap: 'Goals scored between Real Madrid and other teams in La Liga. The arrows from Real Madrid to other teams represent the goals Real Madrid scored on that team when Real Madrid was the home team. The arrows from the other teams to Real Madrid are the goals Real Madrid conceded when playing away.'
 #| out.width: 80%
 #| fig.align: center
 knitr::include_graphics("soccer_blog_files/figure-html/unnamed-chunk-25-1.png")
