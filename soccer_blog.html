@@ -217,7 +217,10 @@ Specify the column types or set `show_col_types = FALSE` to quiet this message.
 `.groups` argument.</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>bayern_data <span class="ot">&lt;-</span> bunds_data <span class="sc">|&gt;</span></span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(home <span class="sc">==</span> <span class="st">"Bayern Munich"</span> <span class="sc">|</span> away <span class="sc">==</span> <span class="st">"Bayern Munich"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(home <span class="sc">==</span> <span class="st">"Bayern Munich"</span> <span class="sc">|</span> away <span class="sc">==</span> <span class="st">"Bayern Munich"</span>)</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(bunds_data, <span class="st">"bunds_data.csv"</span>)</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(bayern_data, <span class="st">"bayern_data.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co">#PREMIER LEAGUE</span></span>
@@ -256,10 +259,12 @@ Specify the column types or set `show_col_types = FALSE` to quiet this message.
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>man_city_data <span class="ot">&lt;-</span> prem_data <span class="sc">|&gt;</span></span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(home <span class="sc">==</span> <span class="st">"Manchester City"</span> <span class="sc">|</span> away <span class="sc">==</span> <span class="st">"Manchester City"</span>)</span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a><span class="co">#select things from soccer dataset</span></span>
-<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>soccer <span class="ot">&lt;-</span> soccer <span class="sc">|&gt;</span></span>
-<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(HomeTeam, AwayTeam, FTHG, FTAG)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(prem_data, <span class="st">"prem_data.csv"</span>)</span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(man_city_data, <span class="st">"man_city_data.csv"</span>)</span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a><span class="co">#select things from soccer dataset</span></span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>soccer <span class="ot">&lt;-</span> soccer <span class="sc">|&gt;</span></span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(HomeTeam, AwayTeam, FTHG, FTAG)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co">#LA LIGA</span></span>
@@ -294,7 +299,10 @@ Specify the column types or set `show_col_types = FALSE` to quiet this message.
 `.groups` argument.</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>rm_data <span class="ot">&lt;-</span> la_liga_data <span class="sc">|&gt;</span></span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(home <span class="sc">==</span> <span class="st">"Real Madrid"</span> <span class="sc">|</span> away <span class="sc">==</span> <span class="st">"Real Madrid"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(home <span class="sc">==</span> <span class="st">"Real Madrid"</span> <span class="sc">|</span> away <span class="sc">==</span> <span class="st">"Real Madrid"</span>)</span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(la_liga_data, <span class="st">"la_liga_data.csv"</span>)</span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(rm_data, <span class="st">"rm_data.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>PREMIER LEAGUE WITH SOCCER DATASET</p>
 <div class="cell">
@@ -353,12 +361,12 @@ Specify the column types or set `show_col_types = FALSE` to quiet this message.
 <span id="cb37-9"><a href="#cb37-9" aria-hidden="true" tabindex="-1"></a>                         <span class="at">labels =</span> <span class="fu">label_number</span>()</span>
 <span id="cb37-10"><a href="#cb37-10" aria-hidden="true" tabindex="-1"></a>                         , <span class="at">guide =</span> <span class="fu">guide_colorbar</span>(<span class="at">title.position=</span><span class="st">"top"</span></span>
 <span id="cb37-11"><a href="#cb37-11" aria-hidden="true" tabindex="-1"></a>                                                  , <span class="at">title.hjust =</span> <span class="fl">0.5</span>)) <span class="sc">+</span></span>
-<span id="cb37-12"><a href="#cb37-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Goals scored in Prem"</span>,</span>
+<span id="cb37-12"><a href="#cb37-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Goals scored in Premier League"</span>,</span>
 <span id="cb37-13"><a href="#cb37-13" aria-hidden="true" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">"Number goals scored"</span>) <span class="sc">+</span></span>
 <span id="cb37-14"><a href="#cb37-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_blank</span>() <span class="sc">+</span></span>
 <span id="cb37-15"><a href="#cb37-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>, <span class="at">legend.key.width=</span><span class="fu">unit</span>(<span class="dv">2</span>,<span class="st">"cm"</span>)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="soccer_blog_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid" width="960"></p>
+<p><img src="soccer_blog_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid" width="1728"></p>
 </div>
 </div>
 <p>LA LIGA WITH GOOD DATASET</p>
@@ -403,7 +411,7 @@ Specify the column types or set `show_col_types = FALSE` to quiet this message.
 <span id="cb46-12"><a href="#cb46-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_blank</span>() <span class="sc">+</span></span>
 <span id="cb46-13"><a href="#cb46-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>, <span class="at">legend.key.width=</span><span class="fu">unit</span>(<span class="dv">2</span>,<span class="st">"cm"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="soccer_blog_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid" width="960"></p>
+<p><img src="soccer_blog_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid" width="1728"></p>
 </div>
 </div>
 <p>BUNDESLIGA WITH GOOD DATASET</p>
@@ -448,7 +456,7 @@ Specify the column types or set `show_col_types = FALSE` to quiet this message.
 <span id="cb55-12"><a href="#cb55-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_blank</span>() <span class="sc">+</span></span>
 <span id="cb55-13"><a href="#cb55-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>, <span class="at">legend.key.width=</span><span class="fu">unit</span>(<span class="dv">2</span>,<span class="st">"cm"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="soccer_blog_files/figure-html/unnamed-chunk-16-1.png" class="img-fluid" width="1440"></p>
+<p><img src="soccer_blog_files/figure-html/unnamed-chunk-16-1.png" class="img-fluid" width="1728"></p>
 </div>
 </div>
 <p>PREMIER LEAGUE WITH GOOD DATASET</p>
@@ -493,7 +501,7 @@ Specify the column types or set `show_col_types = FALSE` to quiet this message.
 <span id="cb64-12"><a href="#cb64-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_blank</span>() <span class="sc">+</span></span>
 <span id="cb64-13"><a href="#cb64-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>, <span class="at">legend.key.width=</span><span class="fu">unit</span>(<span class="dv">2</span>,<span class="st">"cm"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="soccer_blog_files/figure-html/unnamed-chunk-19-1.png" class="img-fluid" width="1440"></p>
+<p><img src="soccer_blog_files/figure-html/unnamed-chunk-19-1.png" class="img-fluid" width="1728"></p>
 </div>
 </div>
 <p>NOW FOR ONE TEAM</p>
@@ -525,18 +533,20 @@ Specify the column types or set `show_col_types = FALSE` to quiet this message.
 <div class="sourceCode cell-code" id="cb73"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb73-1"><a href="#cb73-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>bayern_network_full</span>
 <span id="cb73-2"><a href="#cb73-2" aria-hidden="true" tabindex="-1"></a>         , <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> y, <span class="at">xend =</span> xend, <span class="at">yend =</span> yend)) <span class="sc">+</span></span>
 <span id="cb73-3"><a href="#cb73-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_edges</span>(<span class="at">arrow =</span> <span class="fu">arrow</span>(<span class="at">type =</span> <span class="st">"closed"</span>, <span class="at">angle =</span> <span class="dv">50</span>, <span class="at">length =</span> <span class="fu">unit</span>(<span class="dv">15</span>, <span class="st">"pt"</span>)),</span>
-<span id="cb73-4"><a href="#cb73-4" aria-hidden="true" tabindex="-1"></a>             <span class="fu">aes</span>(<span class="at">color =</span> HG)) <span class="sc">+</span></span>
-<span id="cb73-5"><a href="#cb73-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_nodelabel</span>(<span class="fu">aes</span>(<span class="at">label =</span> name)) <span class="sc">+</span></span>
-<span id="cb73-6"><a href="#cb73-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_continuous</span>(<span class="at">type =</span> <span class="st">"viridis"</span>,</span>
-<span id="cb73-7"><a href="#cb73-7" aria-hidden="true" tabindex="-1"></a>                         <span class="at">labels =</span> <span class="fu">label_number</span>()</span>
-<span id="cb73-8"><a href="#cb73-8" aria-hidden="true" tabindex="-1"></a>                         , <span class="at">guide =</span> <span class="fu">guide_colorbar</span>(<span class="at">title.position=</span><span class="st">"top"</span></span>
-<span id="cb73-9"><a href="#cb73-9" aria-hidden="true" tabindex="-1"></a>                                                  , <span class="at">title.hjust =</span> <span class="fl">0.5</span>)) <span class="sc">+</span></span>
-<span id="cb73-10"><a href="#cb73-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Goals scored by Bayern"</span>,</span>
-<span id="cb73-11"><a href="#cb73-11" aria-hidden="true" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">"Number goals scored"</span>) <span class="sc">+</span></span>
-<span id="cb73-12"><a href="#cb73-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_blank</span>() <span class="sc">+</span></span>
-<span id="cb73-13"><a href="#cb73-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>, <span class="at">legend.key.width=</span><span class="fu">unit</span>(<span class="dv">2</span>,<span class="st">"cm"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb73-4"><a href="#cb73-4" aria-hidden="true" tabindex="-1"></a>             <span class="at">linewidth =</span> <span class="dv">2</span>,</span>
+<span id="cb73-5"><a href="#cb73-5" aria-hidden="true" tabindex="-1"></a>             <span class="at">curvature =</span> <span class="sc">-</span><span class="fl">0.1</span>,</span>
+<span id="cb73-6"><a href="#cb73-6" aria-hidden="true" tabindex="-1"></a>             <span class="fu">aes</span>(<span class="at">color =</span> HG)) <span class="sc">+</span></span>
+<span id="cb73-7"><a href="#cb73-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_nodelabel</span>(<span class="fu">aes</span>(<span class="at">label =</span> name)) <span class="sc">+</span></span>
+<span id="cb73-8"><a href="#cb73-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_continuous</span>(<span class="at">type =</span> <span class="st">"viridis"</span>,</span>
+<span id="cb73-9"><a href="#cb73-9" aria-hidden="true" tabindex="-1"></a>                         <span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">label_number</span>()</span>
+<span id="cb73-10"><a href="#cb73-10" aria-hidden="true" tabindex="-1"></a>                         , <span class="at">guide =</span> <span class="fu">guide_colorbar</span>(<span class="at">title.position=</span><span class="st">"top"</span></span>
+<span id="cb73-11"><a href="#cb73-11" aria-hidden="true" tabindex="-1"></a>                                                  , <span class="at">title.hjust =</span> <span class="fl">0.5</span>)) <span class="sc">+</span></span>
+<span id="cb73-12"><a href="#cb73-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Goals scored by Bayern Munich"</span>,</span>
+<span id="cb73-13"><a href="#cb73-13" aria-hidden="true" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">"Number goals scored"</span>) <span class="sc">+</span></span>
+<span id="cb73-14"><a href="#cb73-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_blank</span>() <span class="sc">+</span></span>
+<span id="cb73-15"><a href="#cb73-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>, <span class="at">legend.key.width=</span><span class="fu">unit</span>(<span class="dv">2</span>,<span class="st">"cm"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="soccer_blog_files/figure-html/unnamed-chunk-21-1.png" class="img-fluid" width="672"></p>
+<p><img src="soccer_blog_files/figure-html/unnamed-chunk-21-1.png" class="img-fluid" width="1248"></p>
 </div>
 </div>
 <p>PREMIER LEAGUE</p>
@@ -567,18 +577,20 @@ Specify the column types or set `show_col_types = FALSE` to quiet this message.
 <div class="sourceCode cell-code" id="cb82"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb82-1"><a href="#cb82-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>mc_network_full</span>
 <span id="cb82-2"><a href="#cb82-2" aria-hidden="true" tabindex="-1"></a>         , <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> y, <span class="at">xend =</span> xend, <span class="at">yend =</span> yend)) <span class="sc">+</span></span>
 <span id="cb82-3"><a href="#cb82-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_edges</span>(<span class="at">arrow =</span> <span class="fu">arrow</span>(<span class="at">type =</span> <span class="st">"closed"</span>, <span class="at">angle =</span> <span class="dv">50</span>, <span class="at">length =</span> <span class="fu">unit</span>(<span class="dv">15</span>, <span class="st">"pt"</span>)),</span>
-<span id="cb82-4"><a href="#cb82-4" aria-hidden="true" tabindex="-1"></a>             <span class="fu">aes</span>(<span class="at">color =</span> HG)) <span class="sc">+</span></span>
-<span id="cb82-5"><a href="#cb82-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_nodelabel</span>(<span class="fu">aes</span>(<span class="at">label =</span> name)) <span class="sc">+</span></span>
-<span id="cb82-6"><a href="#cb82-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_continuous</span>(<span class="at">type =</span> <span class="st">"viridis"</span>,</span>
-<span id="cb82-7"><a href="#cb82-7" aria-hidden="true" tabindex="-1"></a>                         <span class="at">labels =</span> <span class="fu">label_number</span>()</span>
-<span id="cb82-8"><a href="#cb82-8" aria-hidden="true" tabindex="-1"></a>                         , <span class="at">guide =</span> <span class="fu">guide_colorbar</span>(<span class="at">title.position=</span><span class="st">"top"</span></span>
-<span id="cb82-9"><a href="#cb82-9" aria-hidden="true" tabindex="-1"></a>                                                  , <span class="at">title.hjust =</span> <span class="fl">0.5</span>)) <span class="sc">+</span></span>
-<span id="cb82-10"><a href="#cb82-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Goals scored by Bayern"</span>,</span>
-<span id="cb82-11"><a href="#cb82-11" aria-hidden="true" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">"Number goals scored"</span>) <span class="sc">+</span></span>
-<span id="cb82-12"><a href="#cb82-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_blank</span>() <span class="sc">+</span></span>
-<span id="cb82-13"><a href="#cb82-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>, <span class="at">legend.key.width=</span><span class="fu">unit</span>(<span class="dv">2</span>,<span class="st">"cm"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb82-4"><a href="#cb82-4" aria-hidden="true" tabindex="-1"></a>             <span class="at">linewidth =</span> <span class="dv">2</span>,</span>
+<span id="cb82-5"><a href="#cb82-5" aria-hidden="true" tabindex="-1"></a>             <span class="at">curvature =</span> <span class="sc">-</span><span class="fl">0.1</span>,</span>
+<span id="cb82-6"><a href="#cb82-6" aria-hidden="true" tabindex="-1"></a>             <span class="fu">aes</span>(<span class="at">color =</span> HG)) <span class="sc">+</span></span>
+<span id="cb82-7"><a href="#cb82-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_nodelabel</span>(<span class="fu">aes</span>(<span class="at">label =</span> name)) <span class="sc">+</span></span>
+<span id="cb82-8"><a href="#cb82-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_continuous</span>(<span class="at">type =</span> <span class="st">"viridis"</span>,</span>
+<span id="cb82-9"><a href="#cb82-9" aria-hidden="true" tabindex="-1"></a>                         <span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">label_number</span>()</span>
+<span id="cb82-10"><a href="#cb82-10" aria-hidden="true" tabindex="-1"></a>                         , <span class="at">guide =</span> <span class="fu">guide_colorbar</span>(<span class="at">title.position=</span><span class="st">"top"</span></span>
+<span id="cb82-11"><a href="#cb82-11" aria-hidden="true" tabindex="-1"></a>                                                  , <span class="at">title.hjust =</span> <span class="fl">0.5</span>)) <span class="sc">+</span></span>
+<span id="cb82-12"><a href="#cb82-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Goals scored by Manchester City"</span>,</span>
+<span id="cb82-13"><a href="#cb82-13" aria-hidden="true" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">"Number goals scored"</span>) <span class="sc">+</span></span>
+<span id="cb82-14"><a href="#cb82-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_blank</span>() <span class="sc">+</span></span>
+<span id="cb82-15"><a href="#cb82-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>, <span class="at">legend.key.width=</span><span class="fu">unit</span>(<span class="dv">2</span>,<span class="st">"cm"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="soccer_blog_files/figure-html/unnamed-chunk-23-1.png" class="img-fluid" width="672"></p>
+<p><img src="soccer_blog_files/figure-html/unnamed-chunk-23-1.png" class="img-fluid" width="1248"></p>
 </div>
 </div>
 <p>LA LIGA</p>
@@ -609,20 +621,25 @@ Specify the column types or set `show_col_types = FALSE` to quiet this message.
 <div class="sourceCode cell-code" id="cb91"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb91-1"><a href="#cb91-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>rm_network_full</span>
 <span id="cb91-2"><a href="#cb91-2" aria-hidden="true" tabindex="-1"></a>         , <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> y, <span class="at">xend =</span> xend, <span class="at">yend =</span> yend)) <span class="sc">+</span></span>
 <span id="cb91-3"><a href="#cb91-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_edges</span>(<span class="at">arrow =</span> <span class="fu">arrow</span>(<span class="at">type =</span> <span class="st">"closed"</span>, <span class="at">angle =</span> <span class="dv">50</span>, <span class="at">length =</span> <span class="fu">unit</span>(<span class="dv">15</span>, <span class="st">"pt"</span>)),</span>
-<span id="cb91-4"><a href="#cb91-4" aria-hidden="true" tabindex="-1"></a>             <span class="fu">aes</span>(<span class="at">color =</span> HG)) <span class="sc">+</span></span>
-<span id="cb91-5"><a href="#cb91-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_nodelabel</span>(<span class="fu">aes</span>(<span class="at">label =</span> name)) <span class="sc">+</span></span>
-<span id="cb91-6"><a href="#cb91-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_continuous</span>(<span class="at">type =</span> <span class="st">"viridis"</span>,</span>
-<span id="cb91-7"><a href="#cb91-7" aria-hidden="true" tabindex="-1"></a>                         <span class="at">labels =</span> <span class="fu">label_number</span>()</span>
-<span id="cb91-8"><a href="#cb91-8" aria-hidden="true" tabindex="-1"></a>                         , <span class="at">guide =</span> <span class="fu">guide_colorbar</span>(<span class="at">title.position=</span><span class="st">"top"</span></span>
-<span id="cb91-9"><a href="#cb91-9" aria-hidden="true" tabindex="-1"></a>                                                  , <span class="at">title.hjust =</span> <span class="fl">0.5</span>)) <span class="sc">+</span></span>
-<span id="cb91-10"><a href="#cb91-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Goals scored by Bayern"</span>,</span>
-<span id="cb91-11"><a href="#cb91-11" aria-hidden="true" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">"Number goals scored"</span>) <span class="sc">+</span></span>
-<span id="cb91-12"><a href="#cb91-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_blank</span>() <span class="sc">+</span></span>
-<span id="cb91-13"><a href="#cb91-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>, <span class="at">legend.key.width=</span><span class="fu">unit</span>(<span class="dv">2</span>,<span class="st">"cm"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb91-4"><a href="#cb91-4" aria-hidden="true" tabindex="-1"></a>             <span class="at">linewidth =</span> <span class="dv">2</span>,</span>
+<span id="cb91-5"><a href="#cb91-5" aria-hidden="true" tabindex="-1"></a>             <span class="at">curvature =</span> <span class="sc">-</span><span class="fl">0.1</span>,</span>
+<span id="cb91-6"><a href="#cb91-6" aria-hidden="true" tabindex="-1"></a>             <span class="fu">aes</span>(<span class="at">color =</span> HG)) <span class="sc">+</span></span>
+<span id="cb91-7"><a href="#cb91-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_nodelabel</span>(<span class="fu">aes</span>(<span class="at">label =</span> name)) <span class="sc">+</span></span>
+<span id="cb91-8"><a href="#cb91-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_continuous</span>(<span class="at">type =</span> <span class="st">"viridis"</span>,</span>
+<span id="cb91-9"><a href="#cb91-9" aria-hidden="true" tabindex="-1"></a>                         <span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">label_number</span>()</span>
+<span id="cb91-10"><a href="#cb91-10" aria-hidden="true" tabindex="-1"></a>                         , <span class="at">guide =</span> <span class="fu">guide_colorbar</span>(<span class="at">title.position=</span><span class="st">"top"</span></span>
+<span id="cb91-11"><a href="#cb91-11" aria-hidden="true" tabindex="-1"></a>                                                  , <span class="at">title.hjust =</span> <span class="fl">0.5</span>)) <span class="sc">+</span></span>
+<span id="cb91-12"><a href="#cb91-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Goals scored by Real Madrid"</span>,</span>
+<span id="cb91-13"><a href="#cb91-13" aria-hidden="true" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">"Number goals scored"</span>) <span class="sc">+</span></span>
+<span id="cb91-14"><a href="#cb91-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_blank</span>() <span class="sc">+</span></span>
+<span id="cb91-15"><a href="#cb91-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>, <span class="at">legend.key.width=</span><span class="fu">unit</span>(<span class="dv">2</span>,<span class="st">"cm"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="soccer_blog_files/figure-html/unnamed-chunk-25-1.png" class="img-fluid" width="672"></p>
+<p><img src="soccer_blog_files/figure-html/unnamed-chunk-25-1.png" class="img-fluid" width="1248"></p>
 </div>
 </div>
+<p>First, we have network connections for three big leagues in Europe: Bundesliga (Germany), La Liga (Spain), and the Premier League (England). We made network connections exploring how teams in these leagues have scored on each other. Teams typically play each other twice in the regular season, one game at each team’s field. Therefore, the arrows are colored by the home team’s goals. For example, the arrow going from Manchester City to Arsenal is the amount of goals Manchester City scored when the game was at the Etihad Stadium (Manchester City’s home field). The arrow going from Arsenal to Manchester City is the amount of goals Arsenal scored on Manchester City when the game was at the Emirates Stadium (Arsenal’s home field).</p>
+<p>Since these network connections are a bit busy, we decided to create separate connections for the teams that ended in first in each league at the end of the 2021/22 season. These teams are Bayern Munich, Real Madrid, and Manchester City. The arrows represent the same events as mentioned above.</p>
+<p>Looking at the network connections for the teams that ended in first, the colors of the arrows show that these teams scored lots of goals on their opponents when they played at home. When they were away, they did not concede many goals.</p>
 </section>
 
 </main>

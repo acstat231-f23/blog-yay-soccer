@@ -28,7 +28,7 @@ library(tidyverse)
 This is a blog about soccer. Yay!
 
 ### About Soccer
-Insert Background here
+Insert Background here.
 
 # Maps
 #### Number of players by country for three leagues -- La Liga, Premier, and Bundesliga.
@@ -61,13 +61,54 @@ knitr::include_graphics("img/bundesliga_map.png")
 # Team Scores
 Here are networks displaying the goals scored. The arrows point to the away team.
 ```{r}
-#| fig.cap: 'Bundesliga players in each country'
+#| fig.cap: 'La Liga Scores'
 #| out.width: 80%
 #| fig.align: center
+knitr::include_graphics("soccer_blog_files/figure-html/unnamed-chunk-13-1.png")
+```
 
-#knitr::include_graphics("img/network.png")
+```{r}
+#| fig.cap: 'Premier Scores'
+#| out.width: 80%
+#| fig.align: center
+knitr::include_graphics("soccer_blog_files/figure-html/unnamed-chunk-19-1.png")
+```
+
+```{r}
+#| fig.cap: 'Bundesliga Scores'
+#| out.width: 80%
+#| fig.align: center
+knitr::include_graphics("soccer_blog_files/figure-html/unnamed-chunk-16-1.png")
+```
+## Now for one team:
+```{r}
+#| fig.cap: 'Scores by Team, La Liga'
+#| out.width: 80%
+#| fig.align: center
+knitr::include_graphics("soccer_blog_files/figure-html/unnamed-chunk-21-1.png")
+
+
 #""
 ```
+
+```{r}
+#| fig.cap: 'Premier Scores'
+#| out.width: 80%
+#| fig.align: center
+knitr::include_graphics("soccer_blog_files/figure-html/unnamed-chunk-23-1.png")
+```
+
+```{r}
+#| fig.cap: 'La Liga Scores'
+#| out.width: 80%
+#| fig.align: center
+knitr::include_graphics("soccer_blog_files/figure-html/unnamed-chunk-25-1.png")
+```
+First, we have network connections for three big leagues in Europe: Bundesliga (Germany), La Liga (Spain), and the Premier League (England). We made network connections exploring how teams in these leagues have scored on each other. Teams typically play each other twice in the regular season, one game at each team’s field. Therefore, the arrows are colored by the home team’s goals. For example, the arrow going from Manchester City to Arsenal is the amount of goals Manchester City scored when the game was at the Etihad Stadium (Manchester City’s home field). The arrow going from Arsenal to Manchester City is the amount of goals Arsenal scored on Manchester City when the game was at the Emirates Stadium (Arsenal’s home field).
+
+Since these network connections are a bit busy, we decided to create separate connections for the teams that ended in first in each league at the end of the 2021/22 season. These teams are Bayern Munich, Real Madrid, and Manchester City. The arrows represent the same events as mentioned above.
+
+Looking at the network connections for the teams that ended in first, the colors of the arrows show that these teams scored lots of goals on their opponents when they played at home. When they were away, they did not concede many goals.
 
 ## Links 
 
