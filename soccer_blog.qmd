@@ -59,6 +59,9 @@ bunds_data <- bundesliga_2021_22 |>
 bayern_data <- bunds_data |>
   filter(home == "Bayern Munich" | away == "Bayern Munich")
 
+write.csv(bunds_data, "bunds_data.csv")
+write.csv(bayern_data, "bayern_data.csv")
+
 ```
 
 ```{r}
@@ -84,6 +87,8 @@ prem_data <- prem_2021_22 |>
 man_city_data <- prem_data |>
   filter(home == "Manchester City" | away == "Manchester City")
 
+write.csv(prem_data, "prem_data.csv")
+write.csv(man_city_data, "man_city_data.csv")
 
 #select things from soccer dataset
 soccer <- soccer |>
@@ -112,6 +117,9 @@ la_liga_data <- la_liga_2021_22 |>
 
 rm_data <- la_liga_data |>
   filter(home == "Real Madrid" | away == "Real Madrid")
+
+write.csv(la_liga_data, "la_liga_data.csv")
+write.csv(rm_data, "rm_data.csv")
 
 ```
 
@@ -151,7 +159,7 @@ ggplot(data=soccer_network_full
 ```
 
 ```{r}
-#| fig.width: 10
+#| fig.width: 18
 #| fig.height: 15
 #network connection where arrows are colored by goals the home team scored (prem)
 
@@ -164,7 +172,7 @@ ggplot(data=soccer_network_full
                          labels = label_number()
                          , guide = guide_colorbar(title.position="top"
                                                   , title.hjust = 0.5)) +
-  labs(title = "Goals scored in Prem",
+  labs(title = "Goals scored in Premier League",
        color = "Number goals scored") +
   theme_blank() +
   theme(legend.position = "bottom", legend.key.width=unit(2,"cm")) 
@@ -189,7 +197,7 @@ la_liga_network_full <- ggnetwork(la_liga_igraph_full)
 ```
 
 ```{r}
-#| fig.width: 10
+#| fig.width: 18
 #| fig.height: 15
 
 ggplot(data=la_liga_network_full
@@ -226,8 +234,8 @@ bundesliga_network_full <- ggnetwork(bundesliga_igraph_full)
 ```
 
 ```{r}
-#| fig.width: 15
-#| fig.height: 10
+#| fig.width: 18
+#| fig.height: 15
 
 ggplot(data=bundesliga_network_full
          , aes(x = x, y = y, xend = xend, yend = yend)) +
@@ -263,8 +271,8 @@ prem_network_full <- ggnetwork(prem_igraph_full)
 ```
 
 ```{r}
-#| fig.width: 15
-#| fig.height: 10
+#| fig.width: 18
+#| fig.height: 15
 ggplot(data=prem_network_full
          , aes(x = x, y = y, xend = xend, yend = yend)) +
   geom_edges(arrow = arrow(type = "closed", angle = 50, length = unit(15, "pt")),
@@ -297,17 +305,21 @@ bayern_network_full <- ggnetwork(bayern_igraph_full)
 ```
 
 ```{r}
+#| fig.width: 13
+#| fig.height: 10
 
 ggplot(data=bayern_network_full
          , aes(x = x, y = y, xend = xend, yend = yend)) +
   geom_edges(arrow = arrow(type = "closed", angle = 50, length = unit(15, "pt")),
+             linewidth = 2,
+             curvature = -0.1,
              aes(color = HG)) +
   geom_nodelabel(aes(label = name)) +
   scale_color_continuous(type = "viridis",
-                         labels = label_number()
+                         labels = scales::label_number()
                          , guide = guide_colorbar(title.position="top"
                                                   , title.hjust = 0.5)) +
-  labs(title = "Goals scored by Bayern",
+  labs(title = "Goals scored by Bayern Munich",
        color = "Number goals scored") +
   theme_blank() +
   theme(legend.position = "bottom", legend.key.width=unit(2,"cm"))
@@ -328,16 +340,22 @@ mc_network_full <- ggnetwork(mc_igraph_full)
 ```
 
 ```{r}
+#| fig.width: 13
+#| fig.height: 10
+
+
 ggplot(data=mc_network_full
          , aes(x = x, y = y, xend = xend, yend = yend)) +
   geom_edges(arrow = arrow(type = "closed", angle = 50, length = unit(15, "pt")),
+             linewidth = 2,
+             curvature = -0.1,
              aes(color = HG)) +
   geom_nodelabel(aes(label = name)) +
   scale_color_continuous(type = "viridis",
-                         labels = label_number()
+                         labels = scales::label_number()
                          , guide = guide_colorbar(title.position="top"
                                                   , title.hjust = 0.5)) +
-  labs(title = "Goals scored by Bayern",
+  labs(title = "Goals scored by Manchester City",
        color = "Number goals scored") +
   theme_blank() +
   theme(legend.position = "bottom", legend.key.width=unit(2,"cm"))
@@ -358,17 +376,27 @@ rm_network_full <- ggnetwork(rm_igraph_full)
 ```
 
 ```{r}
+#| fig.width: 13
+#| fig.height: 10
 ggplot(data=rm_network_full
          , aes(x = x, y = y, xend = xend, yend = yend)) +
   geom_edges(arrow = arrow(type = "closed", angle = 50, length = unit(15, "pt")),
+             linewidth = 2,
+             curvature = -0.1,
              aes(color = HG)) +
   geom_nodelabel(aes(label = name)) +
   scale_color_continuous(type = "viridis",
-                         labels = label_number()
+                         labels = scales::label_number()
                          , guide = guide_colorbar(title.position="top"
                                                   , title.hjust = 0.5)) +
-  labs(title = "Goals scored by Bayern",
+  labs(title = "Goals scored by Real Madrid",
        color = "Number goals scored") +
   theme_blank() +
   theme(legend.position = "bottom", legend.key.width=unit(2,"cm"))
 ```
+
+First, we have network connections for three big leagues in Europe: Bundesliga (Germany), La Liga (Spain), and the Premier League (England). We made network connections exploring how teams in these leagues have scored on each other. Teams typically play each other twice in the regular season, one game at each team's field. Therefore, the arrows are colored by the home team's goals. For example, the arrow going from Manchester City to Arsenal is the amount of goals Manchester City scored when the game was at the Etihad Stadium (Manchester City's home field). The arrow going from Arsenal to Manchester City is the amount of goals Arsenal scored on Manchester City when the game was at the Emirates Stadium (Arsenal's home field).
+
+Since these network connections are a bit busy, we decided to create separate connections for the teams that ended in first in each league at the end of the 2021/22 season. These teams are Bayern Munich, Real Madrid, and Manchester City. The arrows represent the same events as mentioned above.
+
+Looking at the network connections for the teams that ended in first, the colors of the arrows show that these teams scored lots of goals on their opponents when they played at home. When they were away, they did not concede many goals.
