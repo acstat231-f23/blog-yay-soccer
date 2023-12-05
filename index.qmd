@@ -27,16 +27,10 @@ library(tidyverse)
 
 This is a blog about soccer. Yay!
 
-## Website publication work flow
+### About Soccer
+Insert Background here
 
-1. Edit qmd
-
-2. Knit to HTML to view progress. You may need to click "Open in Browser" for some content to show (sometimes content won't show until you actually push your changes to GitHub and view the published website).
-
-3. Commit and push changes when you are ready. The website may take a couple minutes to update automatically after the push, but you may need to clear your browser's cache or view the page in a private/incognito window to see the changes more quickly. 
-
-
-# Content
+# Maps
 #### Number of players by country for three leagues -- La Liga, Premier, and Bundesliga.
 ### La Liga
 ```{r}
