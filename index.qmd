@@ -110,6 +110,9 @@ Since these network connections are a bit busy, we decided to create separate co
 
 Looking at the network connections for the teams that ended in first, the colors of the arrows show that these teams scored lots of goals on their opponents when they played at home. When they were away, they did not concede many goals.
 
+
+
+
 ## Links 
 
 You can include [links](https://www.datadreaming.org/post/r-markdown-theme-gallery/) using Markdown syntax as shown. 
