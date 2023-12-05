@@ -25,7 +25,7 @@ library(tidyverse)
 
 # Intro
 
-This is a Quarto blog template. This document will be knit to HTML to produce a webpage that will be hosted publicly via GitHub.
+This is a blog about soccer. Yay!
 
 ## Website publication work flow
 
@@ -37,27 +37,43 @@ This is a Quarto blog template. This document will be knit to HTML to produce a 
 
 
 # Content
-
-You can include text, `code`, and output as usual. Remember to take full advantage of Markdown and its [syntax shortcuts](https://www.markdownguide.org/basic-syntax/).
-
+#### Number of players by country for three leagues -- La Liga, Premier, and Bundesliga.
+### La Liga
 ```{r}
-#| label: ggplot-example
-#| fig.align: left
-#| out.width: 100%
+#| fig.cap: 'La Liga players in each country'
+#| out.width: 80%
+#| fig.align: center
 
-ggplot(data = cars, aes(x = speed, y = dist)) + 
-  geom_point() + 
-  labs(x = "Speed of car (mph)",
-       y = "Distance taken to stop (ft)",
-       title = "Stopping distance increases with faster speeds",
-       subtitle = "Based on 1920s study") +
-  theme_classic()
+knitr::include_graphics("img/la_liga_map.png")
 ```
 
-Examples and additional guidance are provided below. 
+### Premier
+```{r}
+#| fig.cap: 'Premier players in each country'
+#| out.width: 80%
+#| fig.align: center
 
-Take note of the the default code chunk options in the `setup` code chunk. For example, unlike the rest of the qmd files we worked in this semester, the default code chunk option is `echo = FALSE`, so you will need to set `echo  = TRUE` for any code chunks you would like to display in the blog. You should be thoughtful and intentional about the code you choose to display. 
+knitr::include_graphics("img/premier_map.png")
+```
+### Bundesliga
+```{r}
+#| fig.cap: 'Bundesliga players in each country'
+#| out.width: 80%
+#| fig.align: center
 
+knitr::include_graphics("img/bundesliga_map.png")
+```
+
+# Team Scores
+Here are networks displaying the goals scored. The arrows point to the away team.
+```{r}
+#| fig.cap: 'Bundesliga players in each country'
+#| out.width: 80%
+#| fig.align: center
+
+#knitr::include_graphics("img/network.png")
+#""
+```
 
 ## Links 
 
