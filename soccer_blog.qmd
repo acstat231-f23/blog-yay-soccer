@@ -400,3 +400,15 @@ First, we have network connections for three big leagues in Europe: Bundesliga (
 Since these network connections are a bit busy, we decided to create separate connections for the teams that ended in first in each league at the end of the 2021/22 season. These teams are Bayern Munich, Real Madrid, and Manchester City. The arrows represent the same events as mentioned above.
 
 Looking at the network connections for the teams that ended in first, the colors of the arrows show that these teams scored lots of goals on their opponents when they played at home. When they were away, they did not concede many goals.
+
+Figure 1: Goals scored between teams in the Premier League at home games. Each arrow represents the amount of goals a home team has scored on the away team.
+
+Figure 2: Goals scored between teams in the Bundesliga at home games. Each arrow represents the amount of goals a home team has scored on the away team.
+
+Figure 3: Goals scored between teams in La Liga at home games. Each arrow represents the amount of goals a home team has scored on the away team.
+
+Figure 4: Goals scored between Real Madrid and other teams in La Liga. The arrows from Real Madrid to other teams represent the goals Real Madrid scored on that team when Real Madrid was the home team. The arrows from the other teams to Real Madrid are the goals Real Madrid conceded when playing away.
+
+Figure 5: Goals scored between Manchester City and other teams in the Premier League. The arrows from Manchester City to other teams represent the goals Manchester City scored on that team when Manchester City was the home team. The arrows from the other teams to Manchester City are the goals Manchester City conceded when playing away.
+
+Figure 6: Goals scored between Bayern Munich and other teams in the Bundesliga. The arrows from Bayern Munich to other teams represent the goals Bayern Munich scored on that team when Bayern Munich was the home team. The arrows from the other teams to Bayern Munich are the goals Bayern Munich conceded when playing away.
