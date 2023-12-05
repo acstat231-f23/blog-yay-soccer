@@ -1,0 +1,444 @@
+"","home","away","HG","AG"
+"1","Alavés","Athletic Club",0,0
+"2","Alavés","Atlético Madrid",2,2
+"3","Alavés","Barcelona",0,1
+"4","Alavés","Betis",0,1
+"5","Alavés","Celta Vigo",2,5
+"6","Alavés","Cádiz",1,2
+"7","Alavés","Elche",1,0
+"8","Alavés","Espanyol",2,1
+"9","Alavés","Getafe",1,1
+"10","Alavés","Granada",6,5
+"11","Alavés","Huesca",1,0
+"12","Alavés","Levante",4,3
+"13","Alavés","Mallorca",0,1
+"14","Alavés","Osasuna",0,3
+"15","Alavés","Rayo Vallecano",1,0
+"16","Alavés","Real Madrid",2,8
+"17","Alavés","Real Sociedad",1,1
+"18","Alavés","Sevilla",1,2
+"19","Alavés","Valencia",2,1
+"20","Alavés","Valladolid",1,0
+"21","Alavés","Villarreal",4,2
+"22","Athletic Club","Alavés",1,0
+"23","Athletic Club","Atlético Madrid",4,1
+"24","Athletic Club","Barcelona",3,4
+"25","Athletic Club","Betis",3,2
+"26","Athletic Club","Celta Vigo",0,2
+"27","Athletic Club","Cádiz",0,1
+"28","Athletic Club","Eibar",1,1
+"29","Athletic Club","Elche",3,1
+"30","Athletic Club","Espanyol",2,1
+"31","Athletic Club","Getafe",6,2
+"32","Athletic Club","Granada",4,3
+"33","Athletic Club","Levante",3,1
+"34","Athletic Club","Mallorca",2,0
+"35","Athletic Club","Osasuna",4,2
+"36","Athletic Club","Rayo Vallecano",1,2
+"37","Athletic Club","Real Madrid",1,3
+"38","Athletic Club","Real Sociedad",4,0
+"39","Athletic Club","Sevilla",0,1
+"40","Athletic Club","Valencia",1,1
+"41","Athletic Club","Valladolid",2,2
+"42","Athletic Club","Villarreal",3,2
+"43","Atlético Madrid","Alavés",5,1
+"44","Atlético Madrid","Athletic Club",2,1
+"45","Atlético Madrid","Barcelona",2,0
+"46","Atlético Madrid","Betis",3,0
+"47","Atlético Madrid","Celta Vigo",4,2
+"48","Atlético Madrid","Cádiz",2,1
+"49","Atlético Madrid","Eibar",5,0
+"50","Atlético Madrid","Elche",1,0
+"51","Atlético Madrid","Espanyol",2,1
+"52","Atlético Madrid","Getafe",4,3
+"53","Atlético Madrid","Granada",0,0
+"54","Atlético Madrid","Huesca",2,0
+"55","Atlético Madrid","Levante",0,3
+"56","Atlético Madrid","Mallorca",1,2
+"57","Atlético Madrid","Osasuna",3,1
+"58","Atlético Madrid","Rayo Vallecano",2,0
+"59","Atlético Madrid","Real Madrid",2,1
+"60","Atlético Madrid","Real Sociedad",4,3
+"61","Atlético Madrid","Sevilla",3,1
+"62","Atlético Madrid","Valencia",6,3
+"63","Atlético Madrid","Villarreal",2,2
+"64","Barcelona","Alavés",6,2
+"65","Barcelona","Athletic Club",6,1
+"66","Barcelona","Atlético Madrid",4,2
+"67","Barcelona","Betis",0,1
+"68","Barcelona","Celta Vigo",4,3
+"69","Barcelona","Cádiz",1,2
+"70","Barcelona","Elche",6,2
+"71","Barcelona","Espanyol",1,0
+"72","Barcelona","Getafe",7,3
+"73","Barcelona","Granada",2,3
+"74","Barcelona","Huesca",4,1
+"75","Barcelona","Levante",3,0
+"76","Barcelona","Mallorca",2,1
+"77","Barcelona","Osasuna",4,0
+"78","Barcelona","Rayo Vallecano",0,1
+"79","Barcelona","Real Madrid",1,2
+"80","Barcelona","Real Sociedad",4,2
+"81","Barcelona","Sevilla",1,0
+"82","Barcelona","Valencia",3,1
+"83","Barcelona","Valladolid",1,0
+"84","Barcelona","Villarreal",0,2
+"85","Betis","Alavés",7,2
+"86","Betis","Athletic Club",1,0
+"87","Betis","Atlético Madrid",2,4
+"88","Betis","Barcelona",3,5
+"89","Betis","Celta Vigo",2,3
+"90","Betis","Cádiz",1,1
+"91","Betis","Elche",0,1
+"92","Betis","Espanyol",2,2
+"93","Betis","Getafe",3,0
+"94","Betis","Granada",4,1
+"95","Betis","Huesca",1,0
+"96","Betis","Levante",5,1
+"97","Betis","Mallorca",2,1
+"98","Betis","Osasuna",5,1
+"99","Betis","Rayo Vallecano",3,2
+"100","Betis","Real Madrid",0,1
+"101","Betis","Real Sociedad",4,0
+"102","Betis","Sevilla",1,3
+"103","Betis","Valencia",6,3
+"104","Betis","Villarreal",0,2
+"105","Celta Vigo","Alavés",4,0
+"106","Celta Vigo","Athletic Club",0,1
+"107","Celta Vigo","Atlético Madrid",1,2
+"108","Celta Vigo","Barcelona",3,3
+"109","Celta Vigo","Betis",2,3
+"110","Celta Vigo","Cádiz",1,2
+"111","Celta Vigo","Eibar",1,1
+"112","Celta Vigo","Elche",4,1
+"113","Celta Vigo","Espanyol",3,1
+"114","Celta Vigo","Getafe",1,2
+"115","Celta Vigo","Granada",1,0
+"116","Celta Vigo","Levante",3,1
+"117","Celta Vigo","Mallorca",4,3
+"118","Celta Vigo","Osasuna",4,1
+"119","Celta Vigo","Rayo Vallecano",2,0
+"120","Celta Vigo","Real Madrid",2,5
+"121","Celta Vigo","Real Sociedad",0,2
+"122","Celta Vigo","Sevilla",3,5
+"123","Celta Vigo","Valencia",1,2
+"124","Celta Vigo","Valladolid",1,1
+"125","Celta Vigo","Villarreal",1,5
+"126","Cádiz","Alavés",3,3
+"127","Cádiz","Athletic Club",2,7
+"128","Cádiz","Atlético Madrid",3,8
+"129","Cádiz","Barcelona",0,0
+"130","Cádiz","Betis",1,3
+"131","Cádiz","Celta Vigo",0,0
+"132","Cádiz","Eibar",1,0
+"133","Cádiz","Elche",4,3
+"134","Cádiz","Espanyol",2,2
+"135","Cádiz","Getafe",1,1
+"136","Cádiz","Granada",1,1
+"137","Cádiz","Huesca",2,1
+"138","Cádiz","Levante",3,3
+"139","Cádiz","Mallorca",1,1
+"140","Cádiz","Osasuna",2,3
+"141","Cádiz","Rayo Vallecano",2,0
+"142","Cádiz","Real Madrid",1,4
+"143","Cádiz","Real Sociedad",0,2
+"144","Cádiz","Sevilla",0,1
+"145","Cádiz","Valencia",2,1
+"146","Cádiz","Villarreal",1,0
+"147","Eibar","Alavés",3,0
+"148","Eibar","Atlético Madrid",1,2
+"149","Eibar","Barcelona",0,1
+"150","Eibar","Betis",1,1
+"151","Eibar","Granada",2,0
+"152","Eibar","Huesca",1,1
+"153","Eibar","Levante",0,1
+"154","Eibar","Real Sociedad",0,1
+"155","Eibar","Sevilla",0,2
+"156","Eibar","Valladolid",1,1
+"157","Eibar","Villarreal",1,3
+"158","Elche","Alavés",3,3
+"159","Elche","Athletic Club",2,0
+"160","Elche","Atlético Madrid",0,3
+"161","Elche","Barcelona",1,4
+"162","Elche","Betis",1,4
+"163","Elche","Celta Vigo",1,0
+"164","Elche","Cádiz",3,1
+"165","Elche","Eibar",1,0
+"166","Elche","Espanyol",2,2
+"167","Elche","Getafe",4,4
+"168","Elche","Granada",0,0
+"169","Elche","Levante",2,1
+"170","Elche","Mallorca",3,0
+"171","Elche","Osasuna",1,1
+"172","Elche","Rayo Vallecano",2,1
+"173","Elche","Real Madrid",1,2
+"174","Elche","Real Sociedad",1,2
+"175","Elche","Sevilla",3,2
+"176","Elche","Valencia",0,1
+"177","Elche","Valladolid",1,1
+"178","Elche","Villarreal",3,2
+"179","Espanyol","Alavés",1,0
+"180","Espanyol","Athletic Club",1,1
+"181","Espanyol","Atlético Madrid",1,2
+"182","Espanyol","Barcelona",2,2
+"183","Espanyol","Betis",1,4
+"184","Espanyol","Celta Vigo",1,0
+"185","Espanyol","Cádiz",2,0
+"186","Espanyol","Elche",1,2
+"187","Espanyol","Getafe",2,0
+"188","Espanyol","Granada",2,0
+"189","Espanyol","Levante",4,3
+"190","Espanyol","Mallorca",1,0
+"191","Espanyol","Osasuna",1,1
+"192","Espanyol","Rayo Vallecano",0,1
+"193","Espanyol","Real Madrid",2,1
+"194","Espanyol","Real Sociedad",1,0
+"195","Espanyol","Sevilla",1,1
+"196","Espanyol","Valencia",1,1
+"197","Espanyol","Villarreal",0,0
+"198","Getafe","Alavés",2,2
+"199","Getafe","Athletic Club",0,0
+"200","Getafe","Atlético Madrid",1,2
+"201","Getafe","Barcelona",0,0
+"202","Getafe","Betis",0,0
+"203","Getafe","Celta Vigo",0,3
+"204","Getafe","Cádiz",4,1
+"205","Getafe","Eibar",0,1
+"206","Getafe","Elche",1,2
+"207","Getafe","Espanyol",2,1
+"208","Getafe","Granada",4,2
+"209","Getafe","Huesca",1,0
+"210","Getafe","Levante",5,1
+"211","Getafe","Mallorca",1,0
+"212","Getafe","Osasuna",1,0
+"213","Getafe","Rayo Vallecano",0,0
+"214","Getafe","Real Madrid",1,0
+"215","Getafe","Real Sociedad",1,2
+"216","Getafe","Sevilla",0,1
+"217","Getafe","Valencia",3,0
+"218","Getafe","Valladolid",0,1
+"219","Getafe","Villarreal",1,2
+"220","Granada","Alavés",2,1
+"221","Granada","Athletic Club",1,0
+"222","Granada","Atlético Madrid",3,3
+"223","Granada","Barcelona",1,5
+"224","Granada","Betis",1,2
+"225","Granada","Celta Vigo",1,1
+"226","Granada","Cádiz",0,1
+"227","Granada","Eibar",4,1
+"228","Granada","Elche",2,2
+"229","Granada","Espanyol",0,0
+"230","Granada","Getafe",1,1
+"231","Granada","Levante",1,4
+"232","Granada","Mallorca",4,1
+"233","Granada","Osasuna",2,2
+"234","Granada","Rayo Vallecano",2,2
+"235","Granada","Real Madrid",2,8
+"236","Granada","Real Sociedad",3,3
+"237","Granada","Sevilla",1,0
+"238","Granada","Valencia",1,1
+"239","Granada","Villarreal",1,7
+"240","Huesca","Athletic Club",1,0
+"241","Huesca","Barcelona",0,1
+"242","Huesca","Betis",0,2
+"243","Huesca","Celta Vigo",3,4
+"244","Huesca","Elche",3,1
+"245","Huesca","Getafe",0,2
+"246","Huesca","Granada",3,2
+"247","Huesca","Osasuna",0,0
+"248","Huesca","Real Madrid",1,2
+"249","Huesca","Real Sociedad",1,0
+"250","Huesca","Valencia",0,0
+"251","Huesca","Villarreal",0,0
+"252","Levante","Alavés",3,1
+"253","Levante","Athletic Club",1,1
+"254","Levante","Atlético Madrid",3,3
+"255","Levante","Barcelona",5,6
+"256","Levante","Betis",2,4
+"257","Levante","Celta Vigo",0,2
+"258","Levante","Cádiz",2,4
+"259","Levante","Eibar",2,1
+"260","Levante","Elche",3,0
+"261","Levante","Espanyol",1,1
+"262","Levante","Getafe",0,0
+"263","Levante","Granada",2,5
+"264","Levante","Huesca",0,2
+"265","Levante","Mallorca",2,0
+"266","Levante","Osasuna",0,1
+"267","Levante","Rayo Vallecano",1,1
+"268","Levante","Real Madrid",3,3
+"269","Levante","Real Sociedad",2,1
+"270","Levante","Sevilla",2,4
+"271","Levante","Valencia",4,4
+"272","Levante","Valladolid",2,2
+"273","Levante","Villarreal",3,5
+"274","Mallorca","Alavés",2,1
+"275","Mallorca","Athletic Club",3,2
+"276","Mallorca","Atlético Madrid",1,0
+"277","Mallorca","Barcelona",0,1
+"278","Mallorca","Betis",1,1
+"279","Mallorca","Celta Vigo",0,0
+"280","Mallorca","Cádiz",2,1
+"281","Mallorca","Elche",2,2
+"282","Mallorca","Espanyol",1,0
+"283","Mallorca","Getafe",0,0
+"284","Mallorca","Granada",2,6
+"285","Mallorca","Levante",1,0
+"286","Mallorca","Osasuna",2,3
+"287","Mallorca","Rayo Vallecano",2,1
+"288","Mallorca","Real Madrid",0,3
+"289","Mallorca","Real Sociedad",0,2
+"290","Mallorca","Sevilla",1,1
+"291","Mallorca","Valencia",0,1
+"292","Mallorca","Villarreal",0,0
+"293","Osasuna","Alavés",1,0
+"294","Osasuna","Athletic Club",1,3
+"295","Osasuna","Atlético Madrid",0,3
+"296","Osasuna","Barcelona",2,4
+"297","Osasuna","Betis",1,3
+"298","Osasuna","Celta Vigo",0,0
+"299","Osasuna","Cádiz",5,2
+"300","Osasuna","Eibar",2,1
+"301","Osasuna","Elche",3,1
+"302","Osasuna","Espanyol",0,0
+"303","Osasuna","Getafe",1,1
+"304","Osasuna","Granada",4,2
+"305","Osasuna","Levante",3,1
+"306","Osasuna","Mallorca",0,2
+"307","Osasuna","Rayo Vallecano",1,0
+"308","Osasuna","Real Madrid",1,3
+"309","Osasuna","Real Sociedad",0,3
+"310","Osasuna","Sevilla",0,2
+"311","Osasuna","Valencia",4,5
+"312","Osasuna","Valladolid",0,0
+"313","Osasuna","Villarreal",1,0
+"314","Rayo Vallecano","Alavés",2,0
+"315","Rayo Vallecano","Athletic Club",0,1
+"316","Rayo Vallecano","Atlético Madrid",0,1
+"317","Rayo Vallecano","Barcelona",1,0
+"318","Rayo Vallecano","Betis",1,1
+"319","Rayo Vallecano","Celta Vigo",0,0
+"320","Rayo Vallecano","Cádiz",3,1
+"321","Rayo Vallecano","Elche",2,1
+"322","Rayo Vallecano","Espanyol",1,0
+"323","Rayo Vallecano","Getafe",3,0
+"324","Rayo Vallecano","Granada",4,0
+"325","Rayo Vallecano","Levante",2,4
+"326","Rayo Vallecano","Mallorca",3,1
+"327","Rayo Vallecano","Osasuna",0,3
+"328","Rayo Vallecano","Real Madrid",0,1
+"329","Rayo Vallecano","Real Sociedad",1,1
+"330","Rayo Vallecano","Sevilla",1,1
+"331","Rayo Vallecano","Valencia",1,1
+"332","Rayo Vallecano","Villarreal",1,5
+"333","Real Madrid","Alavés",3,0
+"334","Real Madrid","Athletic Club",1,0
+"335","Real Madrid","Atlético Madrid",2,0
+"336","Real Madrid","Barcelona",2,5
+"337","Real Madrid","Betis",0,0
+"338","Real Madrid","Celta Vigo",7,2
+"339","Real Madrid","Cádiz",0,0
+"340","Real Madrid","Eibar",2,0
+"341","Real Madrid","Elche",4,3
+"342","Real Madrid","Espanyol",4,0
+"343","Real Madrid","Getafe",4,0
+"344","Real Madrid","Granada",1,0
+"345","Real Madrid","Levante",7,2
+"346","Real Madrid","Mallorca",6,1
+"347","Real Madrid","Osasuna",2,0
+"348","Real Madrid","Rayo Vallecano",2,1
+"349","Real Madrid","Real Sociedad",5,2
+"350","Real Madrid","Sevilla",4,3
+"351","Real Madrid","Valencia",6,1
+"352","Real Madrid","Villarreal",2,1
+"353","Real Sociedad","Alavés",5,0
+"354","Real Sociedad","Athletic Club",2,2
+"355","Real Sociedad","Atlético Madrid",1,2
+"356","Real Sociedad","Barcelona",1,7
+"357","Real Sociedad","Betis",2,2
+"358","Real Sociedad","Celta Vigo",3,1
+"359","Real Sociedad","Cádiz",7,1
+"360","Real Sociedad","Elche",3,0
+"361","Real Sociedad","Espanyol",1,0
+"362","Real Sociedad","Getafe",0,0
+"363","Real Sociedad","Granada",2,0
+"364","Real Sociedad","Levante",2,0
+"365","Real Sociedad","Mallorca",1,0
+"366","Real Sociedad","Osasuna",2,1
+"367","Real Sociedad","Rayo Vallecano",1,0
+"368","Real Sociedad","Real Madrid",0,2
+"369","Real Sociedad","Sevilla",1,2
+"370","Real Sociedad","Valencia",0,0
+"371","Real Sociedad","Valladolid",4,1
+"372","Real Sociedad","Villarreal",1,3
+"373","Sevilla","Alavés",3,2
+"374","Sevilla","Athletic Club",1,1
+"375","Sevilla","Atlético Madrid",3,1
+"376","Sevilla","Barcelona",1,3
+"377","Sevilla","Betis",3,1
+"378","Sevilla","Celta Vigo",2,2
+"379","Sevilla","Cádiz",4,1
+"380","Sevilla","Elche",4,0
+"381","Sevilla","Espanyol",2,0
+"382","Sevilla","Getafe",4,0
+"383","Sevilla","Granada",6,3
+"384","Sevilla","Huesca",1,0
+"385","Sevilla","Levante",5,3
+"386","Sevilla","Mallorca",0,0
+"387","Sevilla","Osasuna",2,0
+"388","Sevilla","Rayo Vallecano",3,0
+"389","Sevilla","Real Madrid",2,3
+"390","Sevilla","Real Sociedad",3,2
+"391","Sevilla","Valencia",4,1
+"392","Sevilla","Villarreal",1,0
+"393","Valencia","Alavés",4,1
+"394","Valencia","Athletic Club",1,1
+"395","Valencia","Atlético Madrid",3,3
+"396","Valencia","Barcelona",3,7
+"397","Valencia","Betis",0,3
+"398","Valencia","Celta Vigo",4,0
+"399","Valencia","Cádiz",1,1
+"400","Valencia","Eibar",4,1
+"401","Valencia","Elche",3,1
+"402","Valencia","Espanyol",1,2
+"403","Valencia","Getafe",1,0
+"404","Valencia","Granada",5,2
+"405","Valencia","Levante",1,1
+"406","Valencia","Mallorca",2,2
+"407","Valencia","Osasuna",2,3
+"408","Valencia","Rayo Vallecano",1,1
+"409","Valencia","Real Madrid",1,2
+"410","Valencia","Real Sociedad",2,2
+"411","Valencia","Sevilla",1,1
+"412","Valencia","Valladolid",3,0
+"413","Valencia","Villarreal",4,1
+"414","Valladolid","Atlético Madrid",1,2
+"415","Valladolid","Betis",1,1
+"416","Valladolid","Cádiz",1,1
+"417","Valladolid","Elche",2,2
+"418","Valladolid","Getafe",2,1
+"419","Valladolid","Granada",1,2
+"420","Valladolid","Huesca",1,3
+"421","Valladolid","Real Madrid",0,1
+"422","Valladolid","Sevilla",1,1
+"423","Valladolid","Valencia",0,1
+"424","Valladolid","Villarreal",0,2
+"425","Villarreal","Alavés",5,2
+"426","Villarreal","Athletic Club",1,1
+"427","Villarreal","Atlético Madrid",2,4
+"428","Villarreal","Barcelona",2,5
+"429","Villarreal","Betis",3,2
+"430","Villarreal","Celta Vigo",3,4
+"431","Villarreal","Cádiz",5,4
+"432","Villarreal","Elche",4,1
+"433","Villarreal","Espanyol",5,1
+"434","Villarreal","Getafe",2,0
+"435","Villarreal","Granada",2,2
+"436","Villarreal","Levante",7,1
+"437","Villarreal","Mallorca",3,0
+"438","Villarreal","Osasuna",2,4
+"439","Villarreal","Rayo Vallecano",2,0
+"440","Villarreal","Real Madrid",0,0
+"441","Villarreal","Real Sociedad",2,3
+"442","Villarreal","Sevilla",5,1
+"443","Villarreal","Valencia",2,0

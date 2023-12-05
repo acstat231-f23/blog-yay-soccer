@@ -1,0 +1,348 @@
+"","home","away","HG","AG"
+"1","Arminia","Augsburg",0,1
+"2","Arminia","Bayern Munich",0,3
+"3","Arminia","Bochum",2,0
+"4","Arminia","Dortmund",1,3
+"5","Arminia","Eint Frankfurt",2,6
+"6","Arminia","Freiburg",1,0
+"7","Arminia","Greuther Fürth",2,2
+"8","Arminia","Hertha BSC",2,1
+"9","Arminia","Hoffenheim",1,1
+"10","Arminia","Köln",1,1
+"11","Arminia","Leverkusen",0,4
+"12","Arminia","M'Gladbach",1,2
+"13","Arminia","Mainz 05",1,2
+"14","Arminia","RB Leipzig",1,2
+"15","Arminia","Schalke 04",1,0
+"16","Arminia","Stuttgart",4,1
+"17","Arminia","Union Berlin",1,0
+"18","Arminia","Werder Bremen",0,2
+"19","Arminia","Wolfsburg",2,5
+"20","Augsburg","Arminia",1,1
+"21","Augsburg","Bayern Munich",2,2
+"22","Augsburg","Bochum",2,3
+"23","Augsburg","Dortmund",1,1
+"24","Augsburg","Eint Frankfurt",1,1
+"25","Augsburg","Freiburg",1,2
+"26","Augsburg","Greuther Fürth",2,1
+"27","Augsburg","Hertha BSC",0,1
+"28","Augsburg","Hoffenheim",2,5
+"29","Augsburg","Köln",3,7
+"30","Augsburg","Leverkusen",2,5
+"31","Augsburg","M'Gladbach",4,1
+"32","Augsburg","Mainz 05",2,1
+"33","Augsburg","RB Leipzig",1,1
+"34","Augsburg","Stuttgart",5,5
+"35","Augsburg","Union Berlin",4,1
+"36","Augsburg","Werder Bremen",2,0
+"37","Augsburg","Wolfsburg",3,2
+"38","Bayern Munich","Arminia",4,3
+"39","Bayern Munich","Augsburg",6,2
+"40","Bayern Munich","Bochum",7,0
+"41","Bayern Munich","Dortmund",7,3
+"42","Bayern Munich","Eint Frankfurt",1,2
+"43","Bayern Munich","Freiburg",4,2
+"44","Bayern Munich","Greuther Fürth",4,1
+"45","Bayern Munich","Hertha BSC",5,0
+"46","Bayern Munich","Hoffenheim",8,1
+"47","Bayern Munich","Köln",8,3
+"48","Bayern Munich","Leverkusen",3,1
+"49","Bayern Munich","M'Gladbach",7,2
+"50","Bayern Munich","Mainz 05",7,3
+"51","Bayern Munich","RB Leipzig",3,2
+"52","Bayern Munich","Stuttgart",6,2
+"53","Bayern Munich","Union Berlin",5,1
+"54","Bayern Munich","Wolfsburg",4,0
+"55","Bochum","Arminia",2,1
+"56","Bochum","Augsburg",0,2
+"57","Bochum","Bayern Munich",4,2
+"58","Bochum","Dortmund",1,1
+"59","Bochum","Eint Frankfurt",2,0
+"60","Bochum","Freiburg",2,1
+"61","Bochum","Greuther Fürth",2,1
+"62","Bochum","Hertha BSC",1,3
+"63","Bochum","Hoffenheim",2,0
+"64","Bochum","Köln",2,2
+"65","Bochum","Leverkusen",0,0
+"66","Bochum","M'Gladbach",0,2
+"67","Bochum","Mainz 05",2,0
+"68","Bochum","RB Leipzig",0,1
+"69","Bochum","Stuttgart",0,0
+"70","Bochum","Union Berlin",0,1
+"71","Bochum","Wolfsburg",1,0
+"72","Dortmund","Arminia",4,0
+"73","Dortmund","Augsburg",5,2
+"74","Dortmund","Bayern Munich",2,3
+"75","Dortmund","Bochum",3,4
+"76","Dortmund","Eint Frankfurt",6,4
+"77","Dortmund","Freiburg",5,1
+"78","Dortmund","Greuther Fürth",3,0
+"79","Dortmund","Hertha BSC",4,1
+"80","Dortmund","Hoffenheim",5,4
+"81","Dortmund","Köln",2,0
+"82","Dortmund","Leverkusen",5,6
+"83","Dortmund","M'Gladbach",6,0
+"84","Dortmund","Mainz 05",4,2
+"85","Dortmund","RB Leipzig",4,6
+"86","Dortmund","Stuttgart",2,1
+"87","Dortmund","Union Berlin",6,2
+"88","Dortmund","Werder Bremen",4,1
+"89","Dortmund","Wolfsburg",8,1
+"90","Eint Frankfurt","Arminia",0,2
+"91","Eint Frankfurt","Augsburg",2,0
+"92","Eint Frankfurt","Bayern Munich",2,2
+"93","Eint Frankfurt","Bochum",2,1
+"94","Eint Frankfurt","Dortmund",2,3
+"95","Eint Frankfurt","Freiburg",4,3
+"96","Eint Frankfurt","Greuther Fürth",0,0
+"97","Eint Frankfurt","Hertha BSC",4,3
+"98","Eint Frankfurt","Hoffenheim",2,2
+"99","Eint Frankfurt","Köln",3,1
+"100","Eint Frankfurt","Leverkusen",7,3
+"101","Eint Frankfurt","M'Gladbach",1,1
+"102","Eint Frankfurt","Mainz 05",2,1
+"103","Eint Frankfurt","RB Leipzig",1,1
+"104","Eint Frankfurt","Schalke 04",3,1
+"105","Eint Frankfurt","Stuttgart",2,2
+"106","Eint Frankfurt","Union Berlin",7,3
+"107","Eint Frankfurt","Wolfsburg",4,5
+"108","Freiburg","Arminia",2,2
+"109","Freiburg","Augsburg",5,0
+"110","Freiburg","Bayern Munich",3,6
+"111","Freiburg","Bochum",3,0
+"112","Freiburg","Dortmund",4,2
+"113","Freiburg","Eint Frankfurt",2,4
+"114","Freiburg","Greuther Fürth",3,1
+"115","Freiburg","Hertha BSC",3,0
+"116","Freiburg","Hoffenheim",2,3
+"117","Freiburg","Köln",6,1
+"118","Freiburg","Leverkusen",2,1
+"119","Freiburg","M'Gladbach",3,3
+"120","Freiburg","Mainz 05",1,1
+"121","Freiburg","RB Leipzig",1,4
+"122","Freiburg","Schalke 04",4,0
+"123","Freiburg","Stuttgart",4,1
+"124","Freiburg","Union Berlin",1,5
+"125","Freiburg","Wolfsburg",3,2
+"126","Greuther Fürth","Arminia",1,1
+"127","Greuther Fürth","Augsburg",0,0
+"128","Greuther Fürth","Bayern Munich",1,3
+"129","Greuther Fürth","Bochum",0,1
+"130","Greuther Fürth","Dortmund",1,3
+"131","Greuther Fürth","Eint Frankfurt",1,2
+"132","Greuther Fürth","Freiburg",0,0
+"133","Greuther Fürth","Hertha BSC",2,1
+"134","Greuther Fürth","Hoffenheim",3,6
+"135","Greuther Fürth","Köln",1,1
+"136","Greuther Fürth","Leverkusen",1,4
+"137","Greuther Fürth","M'Gladbach",0,2
+"138","Greuther Fürth","Mainz 05",2,1
+"139","Greuther Fürth","RB Leipzig",1,6
+"140","Greuther Fürth","Stuttgart",0,0
+"141","Greuther Fürth","Union Berlin",1,0
+"142","Greuther Fürth","Wolfsburg",0,2
+"143","Hertha BSC","Arminia",2,0
+"144","Hertha BSC","Augsburg",3,2
+"145","Hertha BSC","Bayern Munich",1,5
+"146","Hertha BSC","Bochum",1,1
+"147","Hertha BSC","Dortmund",3,2
+"148","Hertha BSC","Eint Frankfurt",1,4
+"149","Hertha BSC","Freiburg",4,2
+"150","Hertha BSC","Greuther Fürth",2,1
+"151","Hertha BSC","Hoffenheim",3,3
+"152","Hertha BSC","Köln",1,3
+"153","Hertha BSC","Leverkusen",4,1
+"154","Hertha BSC","M'Gladbach",3,2
+"155","Hertha BSC","Mainz 05",1,2
+"156","Hertha BSC","RB Leipzig",1,9
+"157","Hertha BSC","Schalke 04",3,0
+"158","Hertha BSC","Stuttgart",2,0
+"159","Hertha BSC","Union Berlin",1,4
+"160","Hertha BSC","Werder Bremen",1,4
+"161","Hertha BSC","Wolfsburg",1,2
+"162","Hoffenheim","Arminia",2,0
+"163","Hoffenheim","Augsburg",3,1
+"164","Hoffenheim","Bayern Munich",1,1
+"165","Hoffenheim","Bochum",1,2
+"166","Hoffenheim","Dortmund",2,3
+"167","Hoffenheim","Eint Frankfurt",4,5
+"168","Hoffenheim","Freiburg",4,7
+"169","Hoffenheim","Greuther Fürth",0,0
+"170","Hoffenheim","Hertha BSC",4,1
+"171","Hoffenheim","Köln",8,0
+"172","Hoffenheim","Leverkusen",2,4
+"173","Hoffenheim","M'Gladbach",4,3
+"174","Hoffenheim","Mainz 05",1,4
+"175","Hoffenheim","RB Leipzig",2,0
+"176","Hoffenheim","Schalke 04",4,2
+"177","Hoffenheim","Stuttgart",2,1
+"178","Hoffenheim","Union Berlin",2,2
+"179","Hoffenheim","Werder Bremen",4,0
+"180","Hoffenheim","Wolfsburg",5,2
+"181","Köln","Arminia",6,2
+"182","Köln","Augsburg",0,3
+"183","Köln","Bayern Munich",0,4
+"184","Köln","Bochum",2,1
+"185","Köln","Dortmund",3,3
+"186","Köln","Eint Frankfurt",1,0
+"187","Köln","Freiburg",2,4
+"188","Köln","Greuther Fürth",3,1
+"189","Köln","Hertha BSC",3,1
+"190","Köln","Hoffenheim",0,1
+"191","Köln","Leverkusen",2,2
+"192","Köln","M'Gladbach",4,1
+"193","Köln","Mainz 05",5,5
+"194","Köln","RB Leipzig",3,2
+"195","Köln","Schalke 04",1,0
+"196","Köln","Stuttgart",1,1
+"197","Köln","Union Berlin",2,2
+"198","Köln","Werder Bremen",1,1
+"199","Köln","Wolfsburg",0,1
+"200","Leverkusen","Arminia",4,2
+"201","Leverkusen","Augsburg",5,1
+"202","Leverkusen","Bayern Munich",1,5
+"203","Leverkusen","Bochum",1,0
+"204","Leverkusen","Dortmund",5,5
+"205","Leverkusen","Eint Frankfurt",5,1
+"206","Leverkusen","Freiburg",3,3
+"207","Leverkusen","Greuther Fürth",7,1
+"208","Leverkusen","Hertha BSC",2,1
+"209","Leverkusen","Hoffenheim",2,2
+"210","Leverkusen","Köln",3,1
+"211","Leverkusen","M'Gladbach",4,0
+"212","Leverkusen","Mainz 05",3,2
+"213","Leverkusen","RB Leipzig",0,1
+"214","Leverkusen","Schalke 04",2,1
+"215","Leverkusen","Stuttgart",9,4
+"216","Leverkusen","Union Berlin",3,3
+"217","Leverkusen","Werder Bremen",1,1
+"218","Leverkusen","Wolfsburg",0,3
+"219","M'Gladbach","Arminia",8,1
+"220","M'Gladbach","Augsburg",3,2
+"221","M'Gladbach","Bayern Munich",4,3
+"222","M'Gladbach","Bochum",2,1
+"223","M'Gladbach","Dortmund",5,2
+"224","M'Gladbach","Eint Frankfurt",6,3
+"225","M'Gladbach","Freiburg",2,7
+"226","M'Gladbach","Greuther Fürth",4,0
+"227","M'Gladbach","Hertha BSC",2,0
+"228","M'Gladbach","Hoffenheim",5,1
+"229","M'Gladbach","Köln",2,5
+"230","M'Gladbach","Leverkusen",1,3
+"231","M'Gladbach","Mainz 05",2,3
+"232","M'Gladbach","RB Leipzig",3,1
+"233","M'Gladbach","Stuttgart",2,3
+"234","M'Gladbach","Union Berlin",1,2
+"235","M'Gladbach","Werder Bremen",1,0
+"236","M'Gladbach","Wolfsburg",2,2
+"237","Mainz 05","Arminia",5,1
+"238","Mainz 05","Augsburg",4,2
+"239","Mainz 05","Bayern Munich",5,2
+"240","Mainz 05","Bochum",1,0
+"241","Mainz 05","Dortmund",1,4
+"242","Mainz 05","Eint Frankfurt",2,4
+"243","Mainz 05","Freiburg",1,0
+"244","Mainz 05","Greuther Fürth",3,0
+"245","Mainz 05","Hertha BSC",5,1
+"246","Mainz 05","Hoffenheim",2,0
+"247","Mainz 05","Köln",1,1
+"248","Mainz 05","Leverkusen",3,2
+"249","Mainz 05","M'Gladbach",1,1
+"250","Mainz 05","RB Leipzig",4,2
+"251","Mainz 05","Stuttgart",0,0
+"252","Mainz 05","Union Berlin",2,2
+"253","Mainz 05","Wolfsburg",3,2
+"254","RB Leipzig","Arminia",0,2
+"255","RB Leipzig","Augsburg",6,1
+"256","RB Leipzig","Bayern Munich",1,5
+"257","RB Leipzig","Bochum",3,0
+"258","RB Leipzig","Dortmund",3,4
+"259","RB Leipzig","Eint Frankfurt",1,1
+"260","RB Leipzig","Freiburg",1,1
+"261","RB Leipzig","Greuther Fürth",4,1
+"262","RB Leipzig","Hertha BSC",6,0
+"263","RB Leipzig","Hoffenheim",3,0
+"264","RB Leipzig","Köln",3,1
+"265","RB Leipzig","Leverkusen",2,3
+"266","RB Leipzig","M'Gladbach",7,3
+"267","RB Leipzig","Mainz 05",4,1
+"268","RB Leipzig","Stuttgart",6,0
+"269","RB Leipzig","Union Berlin",2,2
+"270","RB Leipzig","Wolfsburg",4,2
+"271","Schalke 04","Augsburg",1,0
+"272","Schalke 04","Bayern Munich",0,4
+"273","Schalke 04","Dortmund",0,4
+"274","Schalke 04","Eint Frankfurt",4,3
+"275","Schalke 04","Hertha BSC",1,2
+"276","Schalke 04","Hoffenheim",4,0
+"277","Schalke 04","Köln",1,2
+"278","Schalke 04","M'Gladbach",0,3
+"279","Schalke 04","Mainz 05",0,0
+"280","Schalke 04","RB Leipzig",0,3
+"281","Stuttgart","Arminia",0,3
+"282","Stuttgart","Augsburg",5,3
+"283","Stuttgart","Bayern Munich",0,5
+"284","Stuttgart","Bochum",1,1
+"285","Stuttgart","Dortmund",2,5
+"286","Stuttgart","Eint Frankfurt",2,3
+"287","Stuttgart","Freiburg",2,3
+"288","Stuttgart","Greuther Fürth",5,1
+"289","Stuttgart","Hertha BSC",3,3
+"290","Stuttgart","Hoffenheim",5,1
+"291","Stuttgart","Köln",2,1
+"292","Stuttgart","Leverkusen",1,3
+"293","Stuttgart","M'Gladbach",5,4
+"294","Stuttgart","Mainz 05",4,1
+"295","Stuttgart","RB Leipzig",0,3
+"296","Stuttgart","Schalke 04",5,1
+"297","Stuttgart","Union Berlin",1,1
+"298","Stuttgart","Werder Bremen",1,0
+"299","Stuttgart","Wolfsburg",2,4
+"300","Union Berlin","Arminia",1,0
+"301","Union Berlin","Augsburg",0,0
+"302","Union Berlin","Bayern Munich",2,5
+"303","Union Berlin","Bochum",3,2
+"304","Union Berlin","Dortmund",0,3
+"305","Union Berlin","Eint Frankfurt",2,0
+"306","Union Berlin","Freiburg",0,0
+"307","Union Berlin","Greuther Fürth",1,1
+"308","Union Berlin","Hertha BSC",3,1
+"309","Union Berlin","Hoffenheim",3,2
+"310","Union Berlin","Köln",3,1
+"311","Union Berlin","Leverkusen",2,1
+"312","Union Berlin","M'Gladbach",3,2
+"313","Union Berlin","Mainz 05",3,1
+"314","Union Berlin","RB Leipzig",4,2
+"315","Union Berlin","Schalke 04",0,0
+"316","Union Berlin","Stuttgart",3,2
+"317","Union Berlin","Werder Bremen",3,1
+"318","Union Berlin","Wolfsburg",4,2
+"319","Werder Bremen","Augsburg",2,0
+"320","Werder Bremen","Bayern Munich",1,3
+"321","Werder Bremen","Eint Frankfurt",2,1
+"322","Werder Bremen","Freiburg",0,0
+"323","Werder Bremen","Leverkusen",0,0
+"324","Werder Bremen","M'Gladbach",2,4
+"325","Werder Bremen","Mainz 05",0,1
+"326","Werder Bremen","RB Leipzig",1,4
+"327","Werder Bremen","Schalke 04",1,1
+"328","Werder Bremen","Union Berlin",0,2
+"329","Werder Bremen","Wolfsburg",1,2
+"330","Wolfsburg","Arminia",4,0
+"331","Wolfsburg","Augsburg",1,0
+"332","Wolfsburg","Bayern Munich",4,5
+"333","Wolfsburg","Bochum",1,0
+"334","Wolfsburg","Dortmund",1,5
+"335","Wolfsburg","Eint Frankfurt",1,1
+"336","Wolfsburg","Freiburg",3,2
+"337","Wolfsburg","Greuther Fürth",4,1
+"338","Wolfsburg","Hertha BSC",2,0
+"339","Wolfsburg","Hoffenheim",1,2
+"340","Wolfsburg","Köln",3,3
+"341","Wolfsburg","Leverkusen",0,2
+"342","Wolfsburg","M'Gladbach",1,3
+"343","Wolfsburg","Mainz 05",7,3
+"344","Wolfsburg","RB Leipzig",3,2
+"345","Wolfsburg","Schalke 04",5,0
+"346","Wolfsburg","Stuttgart",0,2
+"347","Wolfsburg","Union Berlin",4,0
