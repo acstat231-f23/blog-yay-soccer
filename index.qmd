@@ -58,7 +58,7 @@ knitr::include_graphics("img/premier_map.png")
 knitr::include_graphics("img/bundesliga_map.png")
 ```
 
-# Team Scores
+# Networks
 Here are networks displaying the goals scored. The arrows point to the away team.
 ## La Liga 
 ```{r}
@@ -81,7 +81,7 @@ knitr::include_graphics("soccer_blog_files/figure-html/unnamed-chunk-19-1.png")
 #| fig.align: center
 knitr::include_graphics("soccer_blog_files/figure-html/unnamed-chunk-16-1.png")
 ```
-# One team:
+
 ## Bundesliga - Bayern Munich
 ```{r}
 #| fig.cap: 'Goals scored between Bayern Munich and other teams in the Bundesliga. The arrows from Bayern Munich to other teams represent the goals Bayern Munich scored on that team when Bayern Munich was the home team. The arrows from the other teams to Bayern Munich are the goals Bayern Munich conceded when playing away.'
