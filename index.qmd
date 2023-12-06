@@ -60,6 +60,7 @@ knitr::include_graphics("img/bundesliga_map.png")
 
 # Networks
 Here are networks displaying the goals scored. The arrows point to the away team.
+
 ## La Liga 
 ```{r}
 #| fig.cap: 'Goals scored between teams in La Liga at home games. Each arrow represents the amount of goals a home team has scored on the away team.'
