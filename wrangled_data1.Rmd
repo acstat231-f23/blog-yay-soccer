@@ -115,8 +115,7 @@ map_2 <- ggplot(La_liga_map, aes(geometry=geom, fill = num_players)) +
     coord_sf(lims_method = "geometry_bbox", default_crs = NULL)
 ggplotly(map_2)
 ```
-Comments: From this map, we can observe that many players in this league originally come from Spain. This is because La Liga is a spanish league.
-
+Comments: From this map, we can observe that many players in this league originally come from Spain. This is because La Liga is a Spanish league. 
 
 ```{r}
 #BUNDESLIGA
@@ -143,3 +142,6 @@ map_3 <- ggplot(Bundesliga_map, aes(geometry=geom, fill = num_players)) +
 ggplotly(map_3)
 ```
 Comments: From this map, we can observe that many players in this league originally come from Germany. This is because Bundesliga league is a german league.
+
+On all the three maps, you can hover over any area on the map, zoom in and out to better visualize the countries, and as you hover you can see the number of players that come from each country.
+
