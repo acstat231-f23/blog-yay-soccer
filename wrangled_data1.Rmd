@@ -7,6 +7,7 @@ library(viridis)
 library(sf)
 library(countrycode)
 library(stringr)
+library(plotly)
 
 # import first data set
 soccer_data1 <- read_delim("data/transfermarkt_fbref_201718.csv", delim = ";", 
@@ -69,23 +70,26 @@ write.csv(soccer_data2, "wrangled_dataset.csv", row.names = FALSE)
  world_map1 <-  maps::map("world", plot = FALSE, fill = TRUE) |>
     st_as_sf()
 
-# Draw map
+# join the world map with the num_players
+
  PremierLeague_map <- Num_players_PremierLeague |>
-   left_join(world_map1, by = c("full_country_name"="ID"))
+   right_join(world_map1, by = c("full_country_name"="ID"))
  
 head(PremierLeague_map)
 
 #Create a visualization
 
-ggplot(PremierLeague_map, aes(geometry=geom, fill = num_players)) +
+map_1 <- ggplot(PremierLeague_map, aes(geometry=geom, fill = num_players)) +
    geom_sf() +
    theme_void() +
    labs(fill = "Number of players"
        , title = "Premier League Map") +
    scale_fill_viridis(option = "magma", direction = -1) +
     coord_sf(lims_method = "geometry_bbox", default_crs = NULL)
+ggplotly(map_1)
 
 ```
+Comments: From this map, we can observe that many players in this league originally come from England. This can be explained by the fact that Premier league is an English league, so many players are English.
 
 ```{r}
 #LA LIGA
@@ -94,22 +98,25 @@ ggplot(PremierLeague_map, aes(geometry=geom, fill = num_players)) +
  world_map2 <-  maps::map("world", plot = FALSE, fill = TRUE) |>
     st_as_sf()
 
-# Draw map
+# join the world map with the num_players
  La_liga_map <- Num_players_Laliga |>
-   left_join(world_map2, by = c("full_country_name"="ID"))
+   right_join(world_map2, by = c("full_country_name"="ID"))
  
 head(La_liga_map)
 
 #Create a visualization
 
-ggplot(La_liga_map, aes(geometry=geom, fill = num_players)) +
+map_2 <- ggplot(La_liga_map, aes(geometry=geom, fill = num_players)) +
    geom_sf() +
    theme_void() +
    labs(fill = "Number of players"
        , title = "La liga Map") +
    scale_fill_viridis(option = "magma", direction = -1) +
     coord_sf(lims_method = "geometry_bbox", default_crs = NULL)
+ggplotly(map_2)
 ```
+Comments: From this map, we can observe that many players in this league originally come from Spain. This is because La Liga is a spanish league.
+
 
 ```{r}
 #BUNDESLIGA
@@ -118,19 +125,21 @@ ggplot(La_liga_map, aes(geometry=geom, fill = num_players)) +
  world_map3 <-  maps::map("world", plot = FALSE, fill = TRUE) |>
     st_as_sf()
 
-# Draw map
+# join the world map with the num_players
  Bundesliga_map <- Num_players_Bundesliga |>
-   left_join(world_map3, by = c("full_country_name"="ID"))
+   right_join(world_map3, by = c("full_country_name"="ID"))
  
 head(Bundesliga_map)
 
 #Create a visualization
 
-ggplot(Bundesliga_map, aes(geometry=geom, fill = num_players)) +
+map_3 <- ggplot(Bundesliga_map, aes(geometry=geom, fill = num_players)) +
    geom_sf() +
    theme_void() +
    labs(fill = "Number of players"
        , title = "Bundesliga Map") +
    scale_fill_viridis(option = "magma", direction = -1) +
     coord_sf(lims_method = "geometry_bbox", default_crs = NULL)
+ggplotly(map_3)
 ```
+Comments: From this map, we can observe that many players in this league originally come from Germany. This is because Bundesliga league is a german league.
