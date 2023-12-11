@@ -23,6 +23,11 @@ options(knitr.kable.NA = '')
 library(tidyverse)
 ```
 
+```{r}
+#| out.width: 100%
+#| fig.align: center
+knitr::include_graphics("Screenshot 2023-12-10 at 2.05.55 PM.png")
+```
 # Intro
 
 This is a blog about soccer. Yay!
