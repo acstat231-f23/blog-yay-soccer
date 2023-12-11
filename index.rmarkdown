@@ -1,0 +1,285 @@
+---
+title: "Exploration of the Soccer World!"
+author: "Gretta Ineza, Sierra Rosado, Lindsay Ward "
+date: "12/5/23"
+format:
+  html:
+    theme: minty
+    toc: true
+---
+
+```{r}
+#| label: setup
+#| include: false
+
+# Set code chunk defaults 
+# Consider adding `message = FALSE` option
+knitr::opts_chunk$set(echo = FALSE) 
+                      
+# Set R environment options
+options(knitr.kable.NA = '')
+
+# Load packages
+library(tidyverse)
+library(readr)
+library(leaflet)
+library(viridis)
+library(sf)
+library(countrycode)
+library(stringr)
+library(plotly)
+```
+
+```{r}
+#| out.width: 100%
+#| fig.align: center
+knitr::include_graphics("Screenshot 2023-12-10 at 2.05.55 PM.png")
+```
+
+
+One of the best parts of every weekend is turning on the tv and putting on a soccer game. There are tons of them, but we focus the most on games in the Premier League (England), La Liga (Spain), and the Bundesliga (Germany). These are three of the five biggest soccer leagues in Europe and attract lots of fans every weekend.
+
+After years of looking at these games and seeing our favorite players, we began to wonder which nations make up these leagues. How many nations are represented in each league and which one is the most represented? Using a dataset from Kaggle, we decided to create interactive maps that show the makeup of each league during the 2021-22 regular season.
+
+These questions then had us thinking about the interactions between clubs in each league. Do you ever look at the standings online and wish it gave you more information about the amount of goals each club has scored between each other? Well you are in luck because that is a frustration we had and decided to explore. First, we created a giant network connection for each league where each arrow represents the total number of goals one team scored on the other team in the regular 2021-22 season. However, these connections were extremely large and messy, so we decided to create another network connection for each team that ended in first at the end of the regular season (2021-22). We know that the team ended up in first because they had a great amount of wins, but by how much did they outscore their opponents? Which opponent did they have the hardest time scoring on? 
+
+
+
+# Maps
+#### Number of players by country for three leagues -- La Liga, Premier, and Bundesliga.
+### La Liga
+
+```{r}
+# import stuff for all maps (to be hidden)
+soccer_data2 <- read.csv("wrangled_dataset.csv")
+
+# some wrangling code bc won't just copy over >:
+
+#Filter the leagues
+Premier_League <- soccer_data2 |>
+  filter(league == "Premier League")
+
+La_liga <- soccer_data2 |>
+  filter(league == "La Liga")
+
+Bundesliga <- soccer_data2 |>
+  filter(league == "Bundesliga")
+
+#Number of players from each country for every league
+ Num_players_PremierLeague <- Premier_League |>
+  group_by(full_country_name) |>
+  summarise(num_players = n())
+ 
+ Num_players_Laliga <- La_liga |>
+  group_by(full_country_name) |>
+  summarise(num_players = n())
+ 
+ Num_players_Bundesliga <- Bundesliga |>
+  group_by(full_country_name) |>
+  summarise(num_players = n())
+ #Filter the leagues
+Premier_League <- soccer_data2 |>
+  filter(league == "Premier League")
+
+La_liga <- soccer_data2 |>
+  filter(league == "La Liga")
+
+Bundesliga <- soccer_data2 |>
+  filter(league == "Bundesliga")
+
+#Number of players from each country for every league
+ Num_players_PremierLeague <- Premier_League |>
+  group_by(full_country_name) |>
+  summarise(num_players = n())
+ 
+ Num_players_Laliga <- La_liga |>
+  group_by(full_country_name) |>
+  summarise(num_players = n())
+ 
+ Num_players_Bundesliga <- Bundesliga |>
+  group_by(full_country_name) |>
+  summarise(num_players = n())
+ 
+ 
+
+#LA LIGA
+
+#Create map object
+ world_map2 <-  maps::map("world", plot = FALSE, fill = TRUE) |>
+    st_as_sf()
+
+# join the world map with the num_players
+ La_liga_map <- Num_players_Laliga |>
+   right_join(world_map2, by = c("full_country_name"="ID"))
+ 
+#head(La_liga_map)
+
+#Create a visualization
+
+map_2 <- ggplot(La_liga_map, aes(geometry=geom, fill = num_players)) +
+   geom_sf() +
+   theme_void() +
+   labs(fill = "Number of players"
+       , title = "La Liga Map") +
+   scale_fill_viridis(option = "magma", direction = -1) +
+    coord_sf(lims_method = "geometry_bbox", default_crs = NULL)
+ggplotly(map_2)
+```
+
+##### From this map, we can observe that many players in this league originally come from Spain. This is because La Liga is a Spanish league.
+
+### Premier League
+
+```{r}
+#PREMIER LEAGUE
+
+#Create map object
+ world_map1 <-  maps::map("world", plot = FALSE, fill = TRUE) |>
+    st_as_sf()
+
+# join the world map with the num_players
+
+ PremierLeague_map <- Num_players_PremierLeague |>
+   right_join(world_map1, by = c("full_country_name"="ID"))
+ 
+#head(PremierLeague_map)
+
+#Create a visualization
+
+map_1 <- ggplot(PremierLeague_map, aes(geometry=geom, fill = num_players)) +
+   geom_sf() +
+   theme_void() +
+   labs(fill = "Number of players"
+       , title = "Premier League Map") +
+   scale_fill_viridis(option = "magma", direction = -1) +
+    coord_sf(lims_method = "geometry_bbox", default_crs = NULL)
+ggplotly(map_1)
+
+```
+
+##### From this map, we can observe that many players in this league originally come from England. This can be explained by the fact that Premier league is an English league, so many players are English.
+
+### Bundesliga
+
+```{r}
+#BUNDESLIGA
+
+#Create map object
+ world_map3 <-  maps::map("world", plot = FALSE, fill = TRUE) |>
+    st_as_sf()
+
+# join the world map with the num_players
+ Bundesliga_map <- Num_players_Bundesliga |>
+   right_join(world_map3, by = c("full_country_name"="ID"))
+ 
+#head(Bundesliga_map)
+
+#Create a visualization
+
+map_3 <- ggplot(Bundesliga_map, aes(geometry=geom, fill = num_players)) +
+   geom_sf() +
+   theme_void() +
+   labs(fill = "Number of players"
+       , title = "Bundesliga Map") +
+   scale_fill_viridis(option = "magma", direction = -1) +
+    coord_sf(lims_method = "geometry_bbox", default_crs = NULL)
+ggplotly(map_3)
+```
+
+###### From this map, we can observe that many players in this league originally come from Germany. This is because Bundesliga league is a German league.
+
+
+
+
+```{r}
+#| out.width: 100%
+#| fig.align: center
+knitr::include_graphics("test.gif")
+```
+
+
+# Networks 
+Here are networks displaying the goals scored. The arrows point to the away team.
+
+### La Liga 
+
+```{r}
+#| fig.cap: 'Goals scored between teams in La Liga at home games. Each arrow represents the amount of goals a home team has scored on the away team.'
+#| out.width: 80%
+#| fig.align: center
+knitr::include_graphics("soccer_blog_files/figure-html/unnamed-chunk-13-1.png")
+```
+
+### La Liga - Real Madrid 
+
+```{r}
+#| fig.cap: 'Goals scored between Real Madrid and other teams in La Liga. The arrows from Real Madrid to other teams represent the goals Real Madrid scored on that team when Real Madrid was the home team. The arrows from the other teams to Real Madrid are the goals Real Madrid conceded when playing away.'
+#| out.width: 80%
+#| fig.align: center
+knitr::include_graphics("soccer_blog_files/figure-html/unnamed-chunk-25-1.png")
+```
+
+
+## Premier League
+
+```{r}
+#| fig.cap: 'Goals scored between teams in the Premier League at home games. Each arrow represents the amount of goals a home team has scored on the away team.'
+#| out.width: 80%
+#| fig.align: center
+knitr::include_graphics("soccer_blog_files/figure-html/unnamed-chunk-19-1.png")
+```
+
+## Premier League - Manchester City
+
+```{r}
+#| fig.cap: 'Goals scored between Manchester City and other teams in the Premier League. The arrows from Manchester City to other teams represent the goals Manchester City scored on that team when Manchester City was the home team. The arrows from the other teams to Manchester City are the goals Manchester City conceded when playing away.'
+#| out.width: 80%
+#| fig.align: center
+knitr::include_graphics("soccer_blog_files/figure-html/unnamed-chunk-23-1.png")
+```
+
+## Bundesliga 
+
+```{r}
+#| fig.cap: 'Goals scored between teams in the Bundesliga at home games. Each arrow represents the amount of goals a home team has scored on the away team.'
+#| out.width: 80%
+#| fig.align: center
+knitr::include_graphics("soccer_blog_files/figure-html/unnamed-chunk-16-1.png")
+```
+
+## Bundesliga - Bayern Munich
+
+```{r}
+#| fig.cap: 'Goals scored between Bayern Munich and other teams in the Bundesliga. The arrows from Bayern Munich to other teams represent the goals Bayern Munich scored on that team when Bayern Munich was the home team. The arrows from the other teams to Bayern Munich are the goals Bayern Munich conceded when playing away.'
+#| out.width: 80%
+#| fig.align: center
+knitr::include_graphics("soccer_blog_files/figure-html/unnamed-chunk-21-1.png")
+
+```
+
+
+
+First, we have network connections for three big leagues in Europe: Bundesliga (Germany), La Liga (Spain), and the Premier League (England). We made network connections exploring how teams in these leagues have scored on each other. Teams typically play each other twice in the regular season, one game at each team’s field. Therefore, the arrows are colored by the home team’s goals. For example, the arrow going from Manchester City to Arsenal is the amount of goals Manchester City scored when the game was at the Etihad Stadium (Manchester City’s home field). The arrow going from Arsenal to Manchester City is the amount of goals Arsenal scored on Manchester City when the game was at the Emirates Stadium (Arsenal’s home field).
+
+Since these network connections are a bit busy, we decided to create separate connections for the teams that ended in first in each league at the end of the 2021/22 season. These teams are Bayern Munich, Real Madrid, and Manchester City. The arrows represent the same events as mentioned above.
+
+Looking at the network connections for the teams that ended in first, the colors of the arrows show that these teams scored lots of goals on their opponents when they played at home. When they were away, they did not concede many goals.
+
+
+```{r}
+#| out.width: 100%
+#| fig.align: center
+knitr::include_graphics("lingard-excited.gif")
+```
+
+
+### References
+#### Datasets
+* Network Data: https://www.insidesport.in/bundesliga-edges-past-laliga-in-european-football-league-revenues/
+* Maps Data: https://www.kaggle.com/datasets/kriegsmaschine/soccer-players-values-and-their-statistics
+
+#### Images
+1. https://www.insidesport.in/bundesliga-edges-past-laliga-in-european-football-league-revenues/
+2. https://www.google.com/url?sa=i&url=https%3A%2F%2Fmakeagif.com%2Fgif%2Fwayne-rooney-bicycle-kick-goal-vs-manchester-city-Kxt1cf&psig=AOvVaw19HWX4gUirPOREd-40zoBx&ust=1702423188421000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCNjCvN3CiIMDFQAAAAAdAAAAABAD
+3. https://www.google.com/url?sa=i&url=https%3A%2F%2Ftenor.com%2Fview%2Flingard-excited-dance-gif-13119889&psig=AOvVaw3Ub04eDKzgm7CmRRVZCjQd&ust=1702423017411000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCNiR74zCiIMDFQAAAAAdAAAAABAD
+
