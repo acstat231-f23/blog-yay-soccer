@@ -21,6 +21,13 @@ options(knitr.kable.NA = '')
 
 # Load packages
 library(tidyverse)
+library(readr)
+library(leaflet)
+library(viridis)
+library(sf)
+library(countrycode)
+library(stringr)
+library(plotly)
 ```
 
 ```{r}
@@ -39,28 +46,94 @@ Insert Background here.
 #### Number of players by country for three leagues -- La Liga, Premier, and Bundesliga.
 ### La Liga
 ```{r}
-#| fig.cap: 'La Liga league players by country'
-#| out.width: 80%
-#| fig.align: center
+# import stuff for all maps (to be hidden)
+soccer_data <- read.csv("wrangled_dataset.csv")
 
-knitr::include_graphics("img/la_liga_map.png")
+#LA LIGA
+
+#Create map object
+ world_map2 <-  maps::map("world", plot = FALSE, fill = TRUE) |>
+    st_as_sf()
+
+# join the world map with the num_players
+ La_liga_map <- Num_players_Laliga |>
+   right_join(world_map2, by = c("full_country_name"="ID"))
+ 
+head(La_liga_map)
+
+#Create a visualization
+
+map_2 <- ggplot(La_liga_map, aes(geometry=geom, fill = num_players)) +
+   geom_sf() +
+   theme_void() +
+   labs(fill = "Number of players"
+       , title = "La liga Map") +
+   scale_fill_viridis(option = "magma", direction = -1) +
+    coord_sf(lims_method = "geometry_bbox", default_crs = NULL)
+ggplotly(map_2)
 ```
+##### From this map, we can observe that many players in this league originally come from Spain. This is because La Liga is a Spanish league.
 
-### Premier
+### Premier League
 ```{r}
-#| fig.cap: 'Premier league players by country'
-#| out.width: 80%
-#| fig.align: center
+#PREMIER LEAGUE
 
-knitr::include_graphics("img/premier_map.png")
+#Create map object
+ world_map1 <-  maps::map("world", plot = FALSE, fill = TRUE) |>
+    st_as_sf()
+
+# join the world map with the num_players
+
+ PremierLeague_map <- Num_players_PremierLeague |>
+   right_join(world_map1, by = c("full_country_name"="ID"))
+ 
+head(PremierLeague_map)
+
+#Create a visualization
+
+map_1 <- ggplot(PremierLeague_map, aes(geometry=geom, fill = num_players)) +
+   geom_sf() +
+   theme_void() +
+   labs(fill = "Number of players"
+       , title = "Premier League Map") +
+   scale_fill_viridis(option = "magma", direction = -1) +
+    coord_sf(lims_method = "geometry_bbox", default_crs = NULL)
+ggplotly(map_1)
+
 ```
+##### From this map, we can observe that many players in this league originally come from England. This can be explained by the fact that Premier league is an English league, so many players are English.
+
 ### Bundesliga
 ```{r}
-#| fig.cap: 'Bundesliga league players by country'
-#| out.width: 80%
-#| fig.align: center
+#BUNDESLIGA
 
-knitr::include_graphics("img/bundesliga_map.png")
+#Create map object
+ world_map3 <-  maps::map("world", plot = FALSE, fill = TRUE) |>
+    st_as_sf()
+
+# join the world map with the num_players
+ Bundesliga_map <- Num_players_Bundesliga |>
+   right_join(world_map3, by = c("full_country_name"="ID"))
+ 
+head(Bundesliga_map)
+
+#Create a visualization
+
+map_3 <- ggplot(Bundesliga_map, aes(geometry=geom, fill = num_players)) +
+   geom_sf() +
+   theme_void() +
+   labs(fill = "Number of players"
+       , title = "Bundesliga Map") +
+   scale_fill_viridis(option = "magma", direction = -1) +
+    coord_sf(lims_method = "geometry_bbox", default_crs = NULL)
+ggplotly(map_3)
+```
+###### From this map, we can observe that many players in this league originally come from Germany. This is because Bundesliga league is a German league.
+
+```{r}
+#| out.width: 100%
+#| fig.align: center
+knitr::include_graphics("test.gif")
 ```
 
 # Networks
