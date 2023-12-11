@@ -56,11 +56,29 @@ bunds_data <- bundesliga_2021_22 |>
   group_by(home, away) |>
   summarise(HG = sum(HG0), AG = sum(AG0))
 
-bayern_data <- bunds_data |>
-  filter(home == "Bayern Munich" | away == "Bayern Munich")
+bunds_data2 <- bunds_data |>
+  mutate(team1 = ifelse(home < away, home, away)
+         , team2 = ifelse(home < away, away, home)
+         , team1_goals = ifelse(team1==home, yes=HG, no=AG)
+         , team2_goals = ifelse(team2==home, yes=HG, no=AG)) |>
+  arrange(team1, team2)
 
-write.csv(bunds_data, "bunds_data.csv")
-write.csv(bayern_data, "bayern_data.csv")
+bunds_data_sum <- bunds_data2 |>
+  select(team1, team2, team1_goals, team2_goals)|>
+  group_by(team1, team2) |>
+  summarise(team1goals = sum(team1_goals), team2goals = sum(team2_goals))
+
+bunds_data_final <- bunds_data_sum |>
+  select(team_a = team1, team_b = team2, goals = team1goals) |>
+  bind_rows(bunds_data_sum |>
+  select(team_a = team2, team_b = team1, goals = team2goals))
+
+#bayern data
+bayern_data <- bunds_data_final |>
+  filter(team_a == "Bayern Munich" | team_b == "Bayern Munich")
+
+# write.csv(bunds_data, "bunds_data.csv")
+# write.csv(bayern_data, "bayern_data.csv")
 
 ```
 
@@ -84,11 +102,30 @@ prem_data <- prem_2021_22 |>
   group_by(home, away) |>
   summarise(HG = sum(HG0), AG = sum(AG0))
 
-man_city_data <- prem_data |>
-  filter(home == "Manchester City" | away == "Manchester City")
+prem_data2 <- prem_data |>
+  mutate(team1 = ifelse(home < away, home, away)
+         , team2 = ifelse(home < away, away, home)
+         , team1_goals = ifelse(team1==home, yes=HG, no=AG)
+         , team2_goals = ifelse(team2==home, yes=HG, no=AG)) |>
+  arrange(team1, team2)
 
-write.csv(prem_data, "prem_data.csv")
-write.csv(man_city_data, "man_city_data.csv")
+
+prem_data_sum <- prem_data2 |>
+  select(team1, team2, team1_goals, team2_goals)|>
+  group_by(team1, team2) |>
+  summarise(team1goals = sum(team1_goals), team2goals = sum(team2_goals))
+
+prem_data_final <- prem_data_sum |>
+  select(team_a = team1, team_b = team2, goals = team1goals) |>
+  bind_rows(prem_data_sum |>
+  select(team_a = team2, team_b = team1, goals = team2goals))
+
+
+man_city_data <- prem_data_final |>
+  filter(team_a == "Manchester City" | team_b == "Manchester City")
+
+# write.csv(prem_data, "prem_data.csv")
+# write.csv(man_city_data, "man_city_data.csv")
 
 #select things from soccer dataset
 soccer <- soccer |>
@@ -115,11 +152,30 @@ la_liga_data <- la_liga_2021_22 |>
   group_by(home, away) |>
   summarise(HG = sum(HG0), AG = sum(AG0))
 
-rm_data <- la_liga_data |>
-  filter(home == "Real Madrid" | away == "Real Madrid")
+la_liga_data2 <- la_liga_data |>
+  mutate(team1 = ifelse(home < away, home, away)
+         , team2 = ifelse(home < away, away, home)
+         , team1_goals = ifelse(team1==home, yes=HG, no=AG)
+         , team2_goals = ifelse(team2==home, yes=HG, no=AG)) |>
+  arrange(team1, team2)
 
-write.csv(la_liga_data, "la_liga_data.csv")
-write.csv(rm_data, "rm_data.csv")
+
+la_liga_data_sum <- la_liga_data2 |>
+  select(team1, team2, team1_goals, team2_goals)|>
+  group_by(team1, team2) |>
+  summarise(team1goals = sum(team1_goals), team2goals = sum(team2_goals))
+
+la_liga_data_final <- la_liga_data_sum |>
+  select(team_a = team1, team_b = team2, goals = team1goals) |>
+  bind_rows(la_liga_data_sum |>
+  select(team_a = team2, team_b = team1, goals = team2goals))
+
+#real madrid data
+rm_data <- la_liga_data_final |>
+  filter(team_a == "Real Madrid" | team_b == "Real Madrid")
+
+# write.csv(la_liga_data, "la_liga_data.csv")
+# write.csv(rm_data, "rm_data.csv")
 
 ```
 
@@ -181,8 +237,8 @@ ggplot(data=soccer_network_full
 LA LIGA WITH GOOD DATASET
 
 ```{r}
-la_liga_igraph_full <- la_liga_data |>
-  select(home, away, everything()) |>
+la_liga_igraph_full <- la_liga_data_final |>
+  select(team_a, team_b, everything()) |>
   # create igraph object
   graph_from_data_frame(directed=TRUE)
 class(la_liga_igraph_full)
@@ -203,7 +259,7 @@ la_liga_network_full <- ggnetwork(la_liga_igraph_full)
 ggplot(data=la_liga_network_full
          , aes(x = x, y = y, xend = xend, yend = yend)) +
   geom_edges(arrow = arrow(type = "closed", angle = 50, length = unit(15, "pt")),
-             aes(color = HG)) +
+             aes(color = goals)) +
   geom_nodelabel(aes(label = name)) +
   scale_color_continuous(type = "viridis",
                          labels = label_number()
@@ -218,8 +274,8 @@ ggplot(data=la_liga_network_full
 BUNDESLIGA WITH GOOD DATASET
 
 ```{r}
-bundesliga_igraph_full <- bunds_data |>
-  select(home, away, everything()) |>
+bundesliga_igraph_full <- bunds_data_final |>
+  select(team_a, team_b, everything()) |>
   # create igraph object
   graph_from_data_frame(directed=TRUE)
 class(bundesliga_igraph_full)
@@ -240,7 +296,7 @@ bundesliga_network_full <- ggnetwork(bundesliga_igraph_full)
 ggplot(data=bundesliga_network_full
          , aes(x = x, y = y, xend = xend, yend = yend)) +
   geom_edges(arrow = arrow(type = "closed", angle = 50, length = unit(15, "pt")),
-             aes(color = HG)) +
+             aes(color = goals)) +
   geom_nodelabel(aes(label = name)) +
   scale_color_continuous(type = "viridis",
                          labels = label_number()
@@ -255,8 +311,8 @@ ggplot(data=bundesliga_network_full
 PREMIER LEAGUE WITH GOOD DATASET
 
 ```{r}
-prem_igraph_full <- prem_data |>
-  select(home, away, everything()) |>
+prem_igraph_full <- prem_data_final |>
+  select(team_a, team_b, everything()) |>
   # create igraph object
   graph_from_data_frame(directed=TRUE)
 class(prem_igraph_full)
@@ -276,7 +332,7 @@ prem_network_full <- ggnetwork(prem_igraph_full)
 ggplot(data=prem_network_full
          , aes(x = x, y = y, xend = xend, yend = yend)) +
   geom_edges(arrow = arrow(type = "closed", angle = 50, length = unit(15, "pt")),
-             aes(color = HG)) +
+             aes(color = goals)) +
   geom_nodelabel(aes(label = name)) +
   scale_color_continuous(type = "viridis",
                          labels = label_number()
@@ -294,7 +350,7 @@ BUNDESLIGA
 
 ```{r}
 bayern_igraph_full <- bayern_data |>
-  select(home, away, everything()) |>
+  select(team_a, team_b, everything()) |>
   # create igraph object
   graph_from_data_frame(directed=TRUE)
 class(bayern_igraph_full)
@@ -313,7 +369,7 @@ ggplot(data=bayern_network_full
   geom_edges(arrow = arrow(type = "closed", angle = 50, length = unit(15, "pt")),
              linewidth = 2,
              curvature = -0.1,
-             aes(color = HG)) +
+             aes(color = goals)) +
   geom_nodelabel(aes(label = name)) +
   scale_color_continuous(type = "viridis",
                          labels = scales::label_number()
@@ -329,7 +385,7 @@ PREMIER LEAGUE
 
 ```{r}
 mc_igraph_full <- man_city_data |>
-  select(home, away, everything()) |>
+  select(team_a, team_b, everything()) |>
   # create igraph object
   graph_from_data_frame(directed=TRUE)
 class(mc_igraph_full)
@@ -349,7 +405,7 @@ ggplot(data=mc_network_full
   geom_edges(arrow = arrow(type = "closed", angle = 50, length = unit(15, "pt")),
              linewidth = 2,
              curvature = -0.1,
-             aes(color = HG)) +
+             aes(color = goals)) +
   geom_nodelabel(aes(label = name)) +
   scale_color_continuous(type = "viridis",
                          labels = scales::label_number()
@@ -365,7 +421,7 @@ LA LIGA
 
 ```{r}
 rm_igraph_full <- rm_data |>
-  select(home, away, everything()) |>
+  select(team_a, team_b, everything()) |>
   # create igraph object
   graph_from_data_frame(directed=TRUE)
 class(rm_igraph_full)
@@ -383,7 +439,7 @@ ggplot(data=rm_network_full
   geom_edges(arrow = arrow(type = "closed", angle = 50, length = unit(15, "pt")),
              linewidth = 2,
              curvature = -0.1,
-             aes(color = HG)) +
+             aes(color = goals)) +
   geom_nodelabel(aes(label = name)) +
   scale_color_continuous(type = "viridis",
                          labels = scales::label_number()
