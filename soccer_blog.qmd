@@ -127,9 +127,6 @@ man_city_data <- prem_data_final |>
 # write.csv(prem_data, "prem_data.csv")
 # write.csv(man_city_data, "man_city_data.csv")
 
-#select things from soccer dataset
-soccer <- soccer |>
-  select(HomeTeam, AwayTeam, FTHG, FTAG)
 
 ```
 
@@ -184,54 +181,23 @@ PREMIER LEAGUE WITH SOCCER DATASET
 ```{r}
 #network connection code for Premier League
 
-soccer_igraph_full <- soccer |>
-  select(HomeTeam, AwayTeam, everything()) |>
-  # create igraph object
-  graph_from_data_frame(directed=TRUE)
-class(soccer_igraph_full)
-gorder(soccer_igraph_full)
-gsize(soccer_igraph_full)
 ```
 
 ```{r}
 #prem
-plot(soccer_igraph_full)
+
 ```
 
 ```{r}
-#prem
-soccer_network_full <- ggnetwork(soccer_igraph_full)
+
 ```
 
 ```{r}
-# Plot network for prem
-ggplot(data=soccer_network_full
-       , aes(x = x, y = y, xend = xend, yend = yend)) +
-  geom_edges(arrow = arrow(type = "closed", length = unit(8, "pt")),
-             color = "lightgray") +
-  geom_nodes() +
-  geom_nodelabel(aes(label = name)) +
-  theme_blank()
+
 ```
 
 ```{r}
-#| fig.width: 18
-#| fig.height: 15
-#network connection where arrows are colored by goals the home team scored (prem)
 
-ggplot(data=soccer_network_full
-         , aes(x = x, y = y, xend = xend, yend = yend)) +
-  geom_edges(arrow = arrow(type = "closed", angle = 50, length = unit(15, "pt")),
-             aes(color = FTHG)) +
-  geom_nodelabel(aes(label = name)) +
-  scale_color_continuous(type = "viridis",
-                         labels = label_number()
-                         , guide = guide_colorbar(title.position="top"
-                                                  , title.hjust = 0.5)) +
-  labs(title = "Goals scored in Premier League",
-       color = "Number goals scored") +
-  theme_blank() +
-  theme(legend.position = "bottom", legend.key.width=unit(2,"cm")) 
 ```
 
 LA LIGA WITH GOOD DATASET
