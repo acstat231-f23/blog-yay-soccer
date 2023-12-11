@@ -182,11 +182,13 @@ ggplotly(map_3)
 ###### From this map, we can observe that many players in this league originally come from Germany. This is because Bundesliga league is a German league.
 
 
+
 ```{r}
 #| out.width: 100%
 #| fig.align: center
 knitr::include_graphics("test.gif")
 ```
+
 # Networks 
 Here are networks displaying the goals scored. The arrows point to the away team.
 
@@ -242,3 +244,18 @@ Since these network connections are a bit busy, we decided to create separate co
 
 Looking at the network connections for the teams that ended in first, the colors of the arrows show that these teams scored lots of goals on their opponents when they played at home. When they were away, they did not concede many goals.
 
+```{r}
+#| out.width: 100%
+#| fig.align: center
+knitr::include_graphics("lingard-excited.gif")
+```
+
+### References
+#### Datasets
+* Network Data: https://www.insidesport.in/bundesliga-edges-past-laliga-in-european-football-league-revenues/
+* Maps Data: https://www.kaggle.com/datasets/kriegsmaschine/soccer-players-values-and-their-statistics
+
+#### Images
+* 1: https://www.insidesport.in/bundesliga-edges-past-laliga-in-european-football-league-revenues/
+* 2: https://www.google.com/url?sa=i&url=https%3A%2F%2Fmakeagif.com%2Fgif%2Fwayne-rooney-bicycle-kick-goal-vs-manchester-city-Kxt1cf&psig=AOvVaw19HWX4gUirPOREd-40zoBx&ust=1702423188421000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCNjCvN3CiIMDFQAAAAAdAAAAABAD
+* 3: https://www.google.com/url?sa=i&url=https%3A%2F%2Ftenor.com%2Fview%2Flingard-excited-dance-gif-13119889&psig=AOvVaw3Ub04eDKzgm7CmRRVZCjQd&ust=1702423017411000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCNiR74zCiIMDFQAAAAAdAAAAABAD
