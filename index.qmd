@@ -83,29 +83,6 @@ Bundesliga <- soccer_data2 |>
  Num_players_Bundesliga <- Bundesliga |>
   group_by(full_country_name) |>
   summarise(num_players = n())
- #Filter the leagues
-Premier_League <- soccer_data2 |>
-  filter(league == "Premier League")
-
-La_liga <- soccer_data2 |>
-  filter(league == "La Liga")
-
-Bundesliga <- soccer_data2 |>
-  filter(league == "Bundesliga")
-
-#Number of players from each country for every league
- Num_players_PremierLeague <- Premier_League |>
-  group_by(full_country_name) |>
-  summarise(num_players = n())
- 
- Num_players_Laliga <- La_liga |>
-  group_by(full_country_name) |>
-  summarise(num_players = n())
- 
- Num_players_Bundesliga <- Bundesliga |>
-  group_by(full_country_name) |>
-  summarise(num_players = n())
- 
  
 
 #LA LIGA
