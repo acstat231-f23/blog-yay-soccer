@@ -1,16 +1,20 @@
 ---
 title: "Exploration of the Soccer World!"
 author: "Gretta Ineza, Sierra Rosado, Lindsay Ward "
-date: "12/5/23"
+date: "12/12/23"
 format:
   html:
     theme: minty
     toc: true
 ---
 
+
+
 ```{r}
 #| label: setup
 #| include: false
+# html href code: ( add in to html doc header POST! final render)
+#<link rel="shortcut icon" href="https://www.iconarchive.com/download/i49313/martin-berube/sport/Soccer.ico">
 
 # Set code chunk defaults 
 # Consider adding `message = FALSE` option
@@ -28,6 +32,9 @@ library(sf)
 library(countrycode)
 library(stringr)
 library(plotly)
+
+# ignore favicon.html
+#cat('<link rel="shortcut icon" href="https://www.iconarchive.com/download/i49313/martin-berube/sport/Soccer.ico">')
 ```
 
 ```{r}
@@ -45,7 +52,8 @@ These questions then had us thinking about the interactions between clubs in eac
 
 
 # Maps
-#### Number of players by country for three leagues -- La Liga, Premier, and Bundesliga.
+##### On all three maps, you can hover over any area on the map, zoom in and out to better visualize the countries, and as you hover, you can see the number of players that come from each country.
+
 ### La Liga
 ```{r}
 # import stuff for all maps (to be hidden)
@@ -186,63 +194,69 @@ ggplotly(map_3)
 ```{r}
 #| out.width: 100%
 #| fig.align: center
+
 knitr::include_graphics("test.gif")
 ```
 
 # Networks 
-Here are networks displaying the goals scored. The arrows point to the away team.
+In the regular season, each team plays each other twice: once at home and once away. Therefore, we took the results of each game and summed up the results to see how many goals each club scored on each other in total. For example, when Arsenal played Chelsea at home, they lost 2-0. However, when Arsenal played Chelsea away, they won 4-2. Therefore, both teams scored 4 goals on each other during the 2021/22 regular season. In our network connections (both large and small), each arrow represents the amount of goals one team has scored on the other in the regular season.
+
+Our large network connections show that there are connections between every team in each league. While it may be hard to interpret these connections, we can definitely still gather some results. For example, Everton, Norwich City, and Southampton in the Premier League all seem to have lots of goals scored on them. In fact, these teams were among the top teams in the Premier League with the highest number of goals against (goals scored on them). We can see similar results in the large network connections for La Liga and the Bundesliga. 
+
+As for the smaller network connections, these explore the relationship between the team that ended in first place at the end of the regular season in 2021/22 and the rest of the other teams. While one or two teams may be questionable, it is evident that Manchester City outscored virtually all of their opponents in the Premier League. We see a similar trend with Real Madrid in La Liga and Bayern Munich in the Bundesliga. Now, these are results we should expect, but it is interesting to see them laid out this way as opposed to in the typical standings chart. 
+
 
 ### La Liga 
 ```{r}
-#| fig.cap: 'Goals scored between teams in La Liga at home games. Each arrow represents the amount of goals a home team has scored on the away team.'
 #| out.width: 80%
 #| fig.align: center
 knitr::include_graphics("soccer_blog_files/figure-html/unnamed-chunk-13-1.png")
 ```
+##### Goals scored between teams in La Liga at home games. Each arrow represents the amount of goals a home team has scored on the away team.
 ### La Liga - Real Madrid 
 ```{r}
-#| fig.cap: 'Goals scored between Real Madrid and other teams in La Liga. The arrows from Real Madrid to other teams represent the goals Real Madrid scored on that team when Real Madrid was the home team. The arrows from the other teams to Real Madrid are the goals Real Madrid conceded when playing away.'
 #| out.width: 80%
 #| fig.align: center
 knitr::include_graphics("soccer_blog_files/figure-html/unnamed-chunk-25-1.png")
 ```
+##### Goals scored between Real Madrid and other teams in La Liga. The arrows from Real Madrid to other teams represent the goals Real Madrid scored on that team when Real Madrid was the home team. The arrows from the other teams to Real Madrid are the goals Real Madrid conceded when playing away.
 
 ## Premier League
 ```{r}
-#| fig.cap: 'Goals scored between teams in the Premier League at home games. Each arrow represents the amount of goals a home team has scored on the away team.'
 #| out.width: 80%
 #| fig.align: center
 knitr::include_graphics("soccer_blog_files/figure-html/unnamed-chunk-19-1.png")
 ```
+##### Goals scored between teams in the Premier League at home games. Each arrow represents the amount of goals a home team has scored on the away team.
 ## Premier League - Manchester City
 ```{r}
-#| fig.cap: 'Goals scored between Manchester City and other teams in the Premier League. The arrows from Manchester City to other teams represent the goals Manchester City scored on that team when Manchester City was the home team. The arrows from the other teams to Manchester City are the goals Manchester City conceded when playing away.'
 #| out.width: 80%
 #| fig.align: center
 knitr::include_graphics("soccer_blog_files/figure-html/unnamed-chunk-23-1.png")
 ```
+##### Goals scored between Manchester City and other teams in the Premier League. The arrows from Manchester City to other teams represent the goals Manchester City scored on that team when Manchester City was the home team. The arrows from the other teams to Manchester City are the goals Manchester City conceded when playing away
+
 ## Bundesliga 
 ```{r}
-#| fig.cap: 'Goals scored between teams in the Bundesliga at home games. Each arrow represents the amount of goals a home team has scored on the away team.'
 #| out.width: 80%
 #| fig.align: center
 knitr::include_graphics("soccer_blog_files/figure-html/unnamed-chunk-16-1.png")
 ```
+##### Goals scored between teams in the Bundesliga at home games. Each arrow represents the amount of goals a home team has scored on the away team.
 ## Bundesliga - Bayern Munich
 ```{r}
-#| fig.cap: 'Goals scored between Bayern Munich and other teams in the Bundesliga. The arrows from Bayern Munich to other teams represent the goals Bayern Munich scored on that team when Bayern Munich was the home team. The arrows from the other teams to Bayern Munich are the goals Bayern Munich conceded when playing away.'
 #| out.width: 80%
 #| fig.align: center
 knitr::include_graphics("soccer_blog_files/figure-html/unnamed-chunk-21-1.png")
 
 ```
+##### Goals scored between Bayern Munich and other teams in the Bundesliga. The arrows from Bayern Munich to other teams represent the goals Bayern Munich scored on that team when Bayern Munich was the home team. The arrows from the other teams to Bayern Munich are the goals Bayern Munich conceded when playing away.
 
 
-First, we have network connections for three big leagues in Europe: Bundesliga (Germany), La Liga (Spain), and the Premier League (England). We made network connections exploring how teams in these leagues have scored on each other. Teams typically play each other twice in the regular season, one game at each team’s field. Therefore, the arrows are colored by the home team’s goals. For example, the arrow going from Manchester City to Arsenal is the amount of goals Manchester City scored when the game was at the Etihad Stadium (Manchester City’s home field). The arrow going from Arsenal to Manchester City is the amount of goals Arsenal scored on Manchester City when the game was at the Emirates Stadium (Arsenal’s home field).
+Hopefully this blog gave you some insight into the Premier League, La Liga, and the Bundesliga in ways that are not typically shown. It is easy to know where some of your favorite players in each league come from, but it is interesting to see the distribution of players around the world. It was not surprising that each league had the most players from the country in which the league is based, but perhaps you saw some countries represented that you did not expect to see. 
 
-Since these network connections are a bit busy, we decided to create separate connections for the teams that ended in first in each league at the end of the 2021/22 season. These teams are Bayern Munich, Real Madrid, and Manchester City. The arrows represent the same events as mentioned above.
-
-Looking at the network connections for the teams that ended in first, the colors of the arrows show that these teams scored lots of goals on their opponents when they played at home. When they were away, they did not concede many goals.
+As for the network connections, they are a fun way to easily explore how teams scored against each other (overall). You may have easily known that Manchester City scored the most goals during the regular season, but the network connection for Manchester City lets you easily see how those goals break down between the clubs. 
+.
 
 ```{r}
 #| out.width: 100%
@@ -250,7 +264,7 @@ Looking at the network connections for the teams that ended in first, the colors
 knitr::include_graphics("lingard-excited.gif")
 ```
 
-### References
+# References
 #### Datasets
 * Network Data: https://www.insidesport.in/bundesliga-edges-past-laliga-in-european-football-league-revenues/
 * Maps Data: https://www.kaggle.com/datasets/kriegsmaschine/soccer-players-values-and-their-statistics
