@@ -120,7 +120,7 @@ map_2 <- ggplot(La_liga_map, aes(geometry=geom, fill = num_players)) +
        , title = "La Liga Map") +
    scale_fill_viridis(option = "magma", direction = -1) +
     coord_sf(lims_method = "geometry_bbox", default_crs = NULL)
-#ggplotly(map_2)
+ggplotly(map_2)
 ```
 ##### From this map, we can observe that many players in this league originally come from Spain. This is because La Liga is a Spanish league.
 
@@ -148,7 +148,7 @@ map_1 <- ggplot(PremierLeague_map, aes(geometry=geom, fill = num_players)) +
        , title = "Premier League Map") +
    scale_fill_viridis(option = "magma", direction = -1) +
     coord_sf(lims_method = "geometry_bbox", default_crs = NULL)
-#ggplotly(map_1)
+ggplotly(map_1)
 
 ```
 ##### From this map, we can observe that many players in this league originally come from England. This can be explained by the fact that Premier league is an English league, so many players are English.
@@ -176,7 +176,7 @@ map_3 <- ggplot(Bundesliga_map, aes(geometry=geom, fill = num_players)) +
        , title = "Bundesliga Map") +
    scale_fill_viridis(option = "magma", direction = -1) +
     coord_sf(lims_method = "geometry_bbox", default_crs = NULL)
-#ggplotly(map_3)
+ggplotly(map_3)
 ```
 ###### From this map, we can observe that many players in this league originally come from Germany. This is because Bundesliga league is a German league.
 
